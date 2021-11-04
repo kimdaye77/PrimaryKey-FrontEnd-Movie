@@ -1,6 +1,6 @@
 # PrimaryKey-FrontEnd-Movie
 
-PrimaryKey-Frontend-Movie-project
+Database PrimaryKey 팀의 일반 영화관 사이트입니다.
 
 ## ~10.28 Thur.
 
