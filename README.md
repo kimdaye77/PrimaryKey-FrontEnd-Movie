@@ -61,3 +61,6 @@ react project 생성 문제로 따로 관리
 일반 영화관 사이트 🍿
 https://github.com/kimdaye77/PrimaryKey-FrontEnd-Movie
 
+## ~11.09 Tues.
+
+프론트엔드 개발
