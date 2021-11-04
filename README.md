@@ -40,19 +40,19 @@ react project 생성 문제로 따로 관리
 서로 fork 후 수정 사항 있을 시 PR로 관리
 
 직원 사이트⏱
-https://github.com/nahyun27/PrimaryKey-FrontEnd-Employee
+<https://github.com/nahyun27/PrimaryKey-FrontEnd-Employee>
 
-JS
+- **JS**
 / -> HOME
 /login -> login
 
-직원 서비스
+- **직원 서비스**
 /service/compliments
 /service/notice
 /service/menu 
 /service/suggestion 
 
-근태관리
+- **근태관리**
 /employee/schedule -> 스케줄 
 /employee/request -> 휴가요청
 /employee/employee-id-> 특정 직원 출퇴근 기록
