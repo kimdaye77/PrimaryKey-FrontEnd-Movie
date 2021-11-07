@@ -64,3 +64,6 @@ https://github.com/kimdaye77/PrimaryKey-FrontEnd-Movie
 ## ~11.09 Tues.
 
 프론트엔드 개발
+
+- API
+https://docs.google.com/spreadsheets/d/1YTooCBynJaHR9CsboMZq0sAcjNm9nCS0vJfgmNTIfa4/edit#gid=330199358
