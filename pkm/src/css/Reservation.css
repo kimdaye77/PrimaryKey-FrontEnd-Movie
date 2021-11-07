@@ -72,7 +72,7 @@
 }
 
 .progress {
-    height: 700px;
+    height: 800px;
     padding-right: 1px;
     box-sizing: border-box;
 }
@@ -85,7 +85,7 @@
 
 .box {
     width: 100%;
-    height:700px;
+    height:800px;
 }
 
 .box table {

@@ -8,6 +8,23 @@
     color:white;
 }
 
-.content_wrap {
-    height:1200px;
+.home_content{
+    max-width: 1024px;
+    align-items: center;
+    margin: 200px auto;
+    text-align:center;
+}
+
+.home_title{
+    line-height: 27px;
+    width:100px;
+    border-bottom: 1px solid white;
+    margin:70px auto;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.left, .right{
+    width:30px;
+    height: 50px;
 }

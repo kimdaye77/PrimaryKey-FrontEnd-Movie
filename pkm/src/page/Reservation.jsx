@@ -71,7 +71,7 @@ class Reservation extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <td height = "350px" colSpan="10">
+                      <td height = "400px" colSpan="10">
                         <div className="check">
                           <p>선택한 항목</p>
                           <div className="checklist">
