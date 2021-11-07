@@ -1,27 +1,34 @@
 import Home from './page/Home.jsx';
 import Reservation from './page/Reservation.jsx';
+import Movie from './page/Movie.jsx';
+import Theater from './page/Theater.jsx';
+import Event from './page/Event.jsx';
+import Store from './page/Store.jsx';
+import Benefit from './page/Benefit.jsx';
 import './App.css';
 import React from "react";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 
 function App() {
   return (
     
     <div className = "App">
-      <Home />
-      <Reservation /> 
-      {/* 임시로 확인 */}
+      {/* <Home />
+      <Reservation />  */}
+
       <BrowserRouter>
-        <Routes>
-          <Route exact path="/" component = {Home} />
-          <Route path="/Reservation" component = {Reservation} />
-        </Routes>
+        <Switch>
+        <Route exact={true} path={"/Movie"} component={Movie} />
+          <Route exact={true} path={"/Reservation"} component={Reservation} />
+          <Route exact={true} path={"/Theater"} component={Theater} />
+          <Route exact={true} path={"/"} component={Home}  />
+          <Route exact={true} path={"/Event"} component={Event} />
+          <Route exact={true} path={"/Store"} component={Store} />
+          <Route exact={true} path={"/Benefit"} component={Benefit} />
+        </Switch>
       </BrowserRouter>
-
-
     </div>
-    
 
   );
 }

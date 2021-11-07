@@ -30,9 +30,9 @@ function Header_white_version() {
           <ul>
           <BrowserRouter>
             <li><NavLink to = "/Movie">영화</NavLink></li>
-            <li><NavLink to = "/Reservation">예매</NavLink></li>
+            <li><NavLink to = {"/Reservation"}>예매</NavLink></li>
             <li><NavLink to = "/Theater">극장</NavLink></li>
-            <li><NavLink exact to = "/"><img src={logo} className="logo" alt="logo"/></NavLink></li>
+            <li><NavLink exact to = {"/"}><img src={logo} className="logo" alt="logo"/></NavLink></li>
             <li><NavLink to = "/Event">이벤트</NavLink></li>
             <li><NavLink to = "/Store">스토어</NavLink></li>
             <li><NavLink to = "/Benefit">혜택</NavLink></li>
