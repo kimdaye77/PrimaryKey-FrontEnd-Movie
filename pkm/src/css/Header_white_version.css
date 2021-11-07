@@ -71,10 +71,12 @@
     padding-left:0;
 }
 
-.Navigation li:nth-child(4) {
-    padding:0;
-    margin:0;
-    padding-right:3vw;
+.Navigation li:nth-child(3) {
+    padding-right:0;
+}
+
+.Navigation li:nth-child(5) {
+    padding-left:0;
 }
 
 
