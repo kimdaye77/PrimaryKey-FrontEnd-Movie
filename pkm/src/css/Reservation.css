@@ -1,9 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
 
 .Reservation {
+    max-width: 1024px;
     font-family: 'Roboto', sans-serif;
     height: 1200px;
     background-color: white;
     margin:0 auto;
     align-items: center;
+    text-align:center;
+}
+
+.rsv_content{
+    align-items: center;
+    margin: 70px auto;
+    text-align:center;
+}
+
+.rsv_title {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.ticket_icon {
+    width:40px;
+    height:40px;
+    vertical-align: middle;
+}
+
+.box_wrap{
+    height:100%;
+    /* 확인겸 */
+}
+
+
+.calendar_wrap{
+    width:100%;
+}
+
+.calendar {
+    margin:10px 0;
+    float: right;
+    width:110px;
+    height:40px;
+    border-radius: 3px;
+    background-color:#F0F0F0;
+    border: 1px solid #C4C4C4;
+}
+
+.calendar::after {
+    display:block;
+    content:"";
+    clear:both;
+}
+
+.calendar p {
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.calendar_icon {
+    width:20px;
+    height:20px;
+    padding-left:5px;
+    vertical-align: middle;
+}
+.choice_wrap{
+    justify-content: space-between;
+    width:100%;
+    display: flex;
+}
+
+.progress {
+    height: 700px;
+    padding-right: 1px;
+    box-sizing: border-box;
+}
+
+.progress table {
+    height: 100%;
+    box-sizing: border-box;
+    border:1px solid blueviolet;
+}
+
+.box {
+    width: 100%;
+    height:700px;
+}
+
+.box table {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+th{
+    height:40px;
+}
+
+td, th {
+    font-size: 14px;
+    line-height: 25px;
+    width:80px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid purple;
+}
+
+.box td {
+    border: 1px solid #C4C4C4;
+}
+
+.box th {
+    border: 1px solid black;
+}
+
+td:last-child{
+    padding:0;
+}
+
+.check {
+    color:white;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.8);
+}
+
+.check p{
+    line-height: 40px;
 }

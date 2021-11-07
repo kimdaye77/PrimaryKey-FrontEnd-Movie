@@ -10,7 +10,7 @@ class Home extends Component {
     return(
       <div className="Home">
         <Header_white_version />
-        <div className="content_wrap">
+        <div className="home_content">
           본문 들어갈 자리
         </div>
         <Footer />
