@@ -1,19 +1,18 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {NavLink, BrowserRouter} from "react-router-dom";
-import logo from '../asset/logo_white.png';
-import person from '../asset/person.png';
-import language from '../asset/language.png';
-import search from '../asset/search.png';
-import menu from '../asset/menu.png';
+import blacklogo from '../asset/blacklogo.png';
+import person from '../asset/person_b.png';
+import language from '../asset/language_b.png';
+import search from '../asset/search_b.png';
+import menu from '../asset/menu_b.png';
 import '../css/reset.css';
-import '../css/Header_white_version.css';
-import '../App.css';
+import '../css/Header_black_version.css';
 
 
-function Header_white_version() {
+function Header_black_version() {
     
     return(
-      <div className="Header">
+      <div className="Header_b">
         <div className="information">
         <nav>
           <ul>
@@ -26,13 +25,13 @@ function Header_white_version() {
       </div>
       <div className="Navigation">
         <nav>
-          <img src={menu} className="menu" alt="menu"/>
+          <img src={menu} className="menu" alt="logo"/>
           <ul>
           <BrowserRouter>
             <li><NavLink to = "/Movie">영화</NavLink></li>
             <li><NavLink to = "/Reservation">예매</NavLink></li>
             <li><NavLink to = "/Theater">극장</NavLink></li>
-            <li><NavLink exact to = "/"><img src={logo} className="logo" alt="logo"/></NavLink></li>
+            <li><NavLink exact to = "/"><img src={blacklogo} alt="logo"/></NavLink></li>
             <li><NavLink to = "/Event">이벤트</NavLink></li>
             <li><NavLink to = "/Store">스토어</NavLink></li>
             <li><NavLink to = "/Benefit">혜택</NavLink></li>
@@ -50,4 +49,4 @@ function Header_white_version() {
     );
 }
 
-export default Header_white_version;
+export default Header_black_version;

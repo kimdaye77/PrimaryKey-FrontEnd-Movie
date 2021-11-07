@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import '../css/reset.css';
 import '../css/Reservation.css';
+import Footer_black from '../component/Footer_black.jsx';
+import Header_black_version from '../component/Header_black_version.jsx';
 
 class Reservation extends Component {
   render(){
     return(
       <div className="Reservation">
-        안녕하세요
+        <Header_black_version />
+        <Footer_black />
       </div>
     );
   }

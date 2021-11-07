@@ -3,6 +3,7 @@
 .Reservation {
     font-family: 'Roboto', sans-serif;
     height: 1200px;
-    background-color: khaki;
-    z-index: 3;
+    background-color: white;
+    margin:0 auto;
+    align-items: center;
 }

@@ -2,5 +2,12 @@
 
 .Home {
     font-family: 'Roboto', sans-serif;
+    height:100%;
+    text-align: center;
+    background-color: black;
+    color:white;
+}
+
+.content_wrap {
     height:1200px;
 }
