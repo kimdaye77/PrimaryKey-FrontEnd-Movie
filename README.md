@@ -67,3 +67,7 @@ https://github.com/kimdaye77/PrimaryKey-FrontEnd-Movie
 
 - API
 https://docs.google.com/spreadsheets/d/1YTooCBynJaHR9CsboMZq0sAcjNm9nCS0vJfgmNTIfa4/edit#gid=330199358
+
+## ~11.11 Thur.
+
+서버 연결 + api 요청
