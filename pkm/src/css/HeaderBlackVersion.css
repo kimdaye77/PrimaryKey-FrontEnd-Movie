@@ -15,6 +15,16 @@
     vertical-align: middle;
 }
 
+
+.menu {
+    padding: 0 30px 0 70px;
+}
+
+.person{
+    padding-right: 30px;
+}
+
+
 .menu, .search, .person{
     margin-top:20px;
     width:25px;
@@ -67,16 +77,14 @@
     padding: 0px 3vw;
 }
 
-.Navigation li + li {
-    padding-left:0;
-}
-
 .Navigation li:nth-child(3) {
     padding-right:0;
+    margin-right:-30px;
 }
 
 .Navigation li:nth-child(5) {
     padding-left:0;
+    margin-left:-50px;
 }
 
 
