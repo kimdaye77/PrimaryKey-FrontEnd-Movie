@@ -8,4 +8,5 @@
 
 .App-logo {
   text-align: center;
+  z-index: -1;
 }
