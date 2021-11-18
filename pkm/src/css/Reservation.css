@@ -94,6 +94,10 @@
     box-sizing: border-box;
 }
 
+table{
+    border-collapse: separate;
+}
+
 th{
     height:40px;
 }
@@ -120,6 +124,7 @@ td:last-child{
 }
 
 .check {
+    margin-top:3px;
     color:white;
     box-sizing: border-box;
     width: 100%;

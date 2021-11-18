@@ -1,0 +1,22 @@
+.movie_data img {
+    width: 200px;
+    height: 300px;
+    border-radius: 7px;
+}
+
+.movie_data {
+    display:inline-block;
+    margin:0 auto;
+}
+
+.title {
+    width:200px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.movie_data {
+    padding-right:20px;
+    height:100%;
+}

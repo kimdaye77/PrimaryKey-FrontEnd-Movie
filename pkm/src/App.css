@@ -2,12 +2,10 @@
 
 
 .App {
-  /* font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-color: black;
-  color:white; */
 }
 
 .App-logo {
-
+  text-align: center;
 }

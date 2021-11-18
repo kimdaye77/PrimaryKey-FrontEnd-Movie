@@ -6,11 +6,11 @@ import language from '../asset/language.png';
 import search from '../asset/search.png';
 import menu from '../asset/menu.png';
 import '../css/reset.css';
-import '../css/Header_white_version.css';
+import '../css/HeaderWhiteVersion.css';
 import '../App.css';
 
 
-function Header_white_version() {
+function HeaderWhiteVersion() {
     
     return(
       <div className="Header">
@@ -50,4 +50,4 @@ function Header_white_version() {
     );
 }
 
-export default Header_white_version;
+export default HeaderWhiteVersion;

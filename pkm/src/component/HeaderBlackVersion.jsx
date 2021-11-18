@@ -6,10 +6,10 @@ import language from '../asset/language_b.png';
 import search from '../asset/search_b.png';
 import menu from '../asset/menu_b.png';
 import '../css/reset.css';
-import '../css/Header_black_version.css';
+import '../css/HeaderBlackVersion.css';
 
 
-function Header_black_version() {
+function HeaderBlackVersion() {
     
   return(
     <div className="Header_b">
@@ -49,4 +49,4 @@ function Header_black_version() {
   );
 }
 
-export default Header_black_version;
+export default HeaderBlackVersion;

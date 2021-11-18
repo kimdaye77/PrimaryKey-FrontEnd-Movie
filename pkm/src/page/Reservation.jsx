@@ -3,14 +3,14 @@ import '../css/reset.css';
 import '../css/Reservation.css';
 import ticket from '../asset/ticket.png';
 import calendar from '../asset/calendar.png';
-import Footer_black from '../component/Footer_black.jsx';
-import Header_black_version from '../component/Header_black_version.jsx';
+import FooterBlack from '../component/FooterBlack.jsx';
+import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
 
 class Reservation extends Component {
   render(){
     return(
       <div className="Reservation">
-        <Header_black_version />
+        <HeaderBlackVersion />
         <div className="rsv_content">
           <p className="rsv_title">티켓 예매<img src={ticket} className="ticket_icon" alt="ticket" /></p>
           <div className = "box_wrap">
@@ -54,6 +54,14 @@ class Reservation extends Component {
                       </td>
                       <td rowSpan="2">
                         <div className="date">
+                          <div className="number">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>1</span>
+                          </div>
                           날짜
                         </div>
                       </td>
@@ -84,7 +92,7 @@ class Reservation extends Component {
             </div>
           </div>
         </div>
-        <Footer_black />
+        <FooterBlack />
       </div>
     );
   }

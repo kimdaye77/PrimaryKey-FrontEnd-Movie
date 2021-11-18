@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import '../css/reset.css';
-import '../css/Footer_black.css';
+import '../css/FooterBlack.css';
 
-class Footer_black extends Component {
+class FooterBlack extends Component {
   render(){
     return(
       <div className="Footer_b">
@@ -23,4 +23,4 @@ class Footer_black extends Component {
   }
 }
 
-export default Footer_black;
+export default FooterBlack;
