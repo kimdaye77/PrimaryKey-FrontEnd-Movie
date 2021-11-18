@@ -1,22 +1,39 @@
-.movie_data img {
-    width: 200px;
-    height: 300px;
-    border-radius: 7px;
+.movies {
+    width:100%;
+    position: absolute;
 }
-
-.movie_data {
-    display:inline-block;
-    margin:0 auto;
-}
-
 .title {
-    width:200px;
+    position: relative;
+    width:100%;
+    padding: 8px 20px 50px;
+    font-size: 13px;
+    text-align: center;
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.movie_data {
-    padding-right:20px;
-    height:100%;
+.swiper-pagination-bullet {
+    color:white;
+    --swiper-theme-color: white;
+}
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border: 1px solid white;
+ }
+
+.poster img{
+    width:200px;
+    height:300px;
+    border-radius: 7px;
+    padding:0 50px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    padding:10px;
+    --swiper-theme-color:white;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 5px;
 }

@@ -51,7 +51,6 @@ class MovieList extends Component {
       <>
         <Swiper
             className='swiper-container'
-            spaceBetween={50}
             slidesPerView={4}
             navigation
             pagination={{ clickable: true }}
@@ -68,12 +67,17 @@ class MovieList extends Component {
             ):(
                 <div className="movies">
                     {movies.map((movie)=> (
-                      <SwiperSlide>                      
-                        <MovieApi
-                        
-                          title={movie.title}
-                          poster={movie.medium_cover_image}
+                      <SwiperSlide>
+                        <div className="poster">
+                          <MovieApi
+                            poster={movie.medium_cover_image}
+                            />
+                        </div>
+                        <div className="title">
+                          <MovieApi
+                            title={movie.title}
                           />
+                        </div>                      
                         </SwiperSlide>
                     ))}
                 </div>
