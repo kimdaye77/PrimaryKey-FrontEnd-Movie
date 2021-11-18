@@ -1,4 +1,5 @@
 import Home from './page/Home.jsx';
+import Login from './page/Login.jsx';
 import Reservation from './page/Reservation.jsx';
 import Movie from './page/Movie.jsx';
 import Theater from './page/Theater.jsx';
@@ -9,17 +10,14 @@ import './App.css';
 import React from "react";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import axios from "axios";
-
-
 class App extends React.Component {
   render() {
     return (
-      
       <div className = "App">
         
         <BrowserRouter>
           <Switch>
+          <Route exact={true} path={"/Login"} component={Login} />
           <Route exact={true} path={"/Movie"} component={Movie} />
           <Route exact={true} path={"/Reservation"} component={Reservation} />
           <Route exact={true} path={"/Theater"} component={Theater} />

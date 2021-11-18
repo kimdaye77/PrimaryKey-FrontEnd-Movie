@@ -14,5 +14,6 @@ function TheaterApi({theater_name}) {
 
 TheaterApi.propTypes = {
         theater_name: PropTypes.string.isRequired
-    };
+};
+
 export default TheaterApi;

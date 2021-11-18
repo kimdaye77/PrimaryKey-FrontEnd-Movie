@@ -16,10 +16,10 @@ function HeaderBlackVersion() {
       <div className="information">
       <nav>
         <ul>
-          <p>로그인</p>
-          <p>회원가입</p>
-          <p>ENGLISH</p>
-          <p><img src={language} className="language" alt="language" /></p>
+          <li><NavLink to = "/Login">로그인</NavLink></li>
+          <li>회원가입</li>
+          <li>ENGLISH</li>
+          <li><img src={language} className="language" alt="language" /></li>
         </ul>
       </nav>
     </div>

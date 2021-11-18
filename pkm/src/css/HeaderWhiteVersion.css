@@ -34,16 +34,16 @@
     text-align: right;
 }
 
-.information p {
+.information li {
     display: inline-block;
     margin-left: 15px;
 }
 
-.information p:first-child {
+.information li:first-child {
     margin-left: 0;
 }
 
-.information p:last-child {
+.information li:last-child {
     margin-left: 8px;
 }
 
@@ -56,7 +56,7 @@
     vertical-align: middle;
     align-items: center;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .Navigation li {
@@ -70,7 +70,7 @@
     vertical-align:middle;
     align-items: center;
     text-align: center;
-    padding: 0px 3vw;
+    padding: 0px 2vw;
     z-index: 5;
 }
 
@@ -86,12 +86,10 @@
 
 .Navigation li:nth-child(4) {
     z-index: -50;
-    padding-left: -10px;
 }
 
 .Navigation li:nth-child(5) {
     padding-left:0;
-    margin-left:-50px;
 }
 
 li img {
