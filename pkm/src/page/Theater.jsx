@@ -5,11 +5,14 @@ import '../css/reset.css';
 import '../css/Theater.css';
 import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
+import PropTypes from "prop-types";
 
 class Theater extends Component {
   state = {
     isLoading: true,
     theaterList: [],
+    theaterInfo:[],
+    clickedTheater :"",
   };
 
   getTheaters = async()=> {
@@ -19,17 +22,29 @@ class Theater extends Component {
         },
 
     } = await axios.get("http://user.primarykey.shop:3000/theater");
-    this.setState({isLoading:false, theaterList});
-    console.log(theaterList);
+    const {
+      data:{
+        theaterInfo
+      },
+    } = await axios.get("http://user.primarykey.shop:3000/theater/:theaterID");
+    this.setState({isLoading:false, theaterList, theaterInfo});
   };
 
   componentDidMount()  {
   //영화데이터로딩
       this.getTheaters();
   }
+
+  handleClick = (e, clickedTheater) => {
+    e.preventDefault();
+    this.setState({clickedTheater:clickedTheater});
+    this.handleClick = this.handleClick.bind(this);
+    console.log(clickedTheater);
+  };
   
   render(){
-    const {isLoading, theaterList}= this.state;
+    const {isLoading, theaterList, theaterInfo, clickedTheater}= this.state;
+    let theater_name = "";
     return(
       <div className="Theater">
         <HeaderBlackVersion />
@@ -41,14 +56,32 @@ class Theater extends Component {
             </div>
         ):(
             <div className="theater_content">
-                <div className="title"></div> 
-                <div className="theater_list">
-                    {theaterList.map((theater) => (
+                <div className="title"></div>
+                <div className="theaterbox">
+                  <div className="theater_local">
+                    지역들
+                  </div>
+                  <div className="theater_list">                
+                      {theaterList.map((theater)  => (
+                          theater_name = theater.theater_name,
+                         <a href="#" className="theater_name" onClick={(e, clickedTheater) => (theater_name = theater.theater_name, clickedTheater=theater_name,  this.handleClick(e, clickedTheater), this.handleClick = this.handleClick.bind(this))}>
+                           {theater_name} <br></br></a>
+                      ))
+                        }
+                        
+                    
+                      
+                  </div>  
+                  <div className="gangnam">
+                    {theaterInfo.map((t) => (
                         <TheaterApi
-                            theater_name={theater.theater_name}
+                            theater_name={t.theater_name}
+                            theater_image = {t.theater_image}
                         />
                     ))}
-                </div>                  
+                  </div>      
+                </div>
+                          
             </div>
                 )}
         </div>

@@ -26,7 +26,12 @@
 }
 
 .theater_list {
-    padding: 50px 0;
+    padding: 10px 20px;
     line-height: 25px;
     border:1px solid black;
+    text-align: left;
+    font-size: 12px;
+    line-height: 20px;
+    height:200px;
+    border-radius: 5px;
 }
