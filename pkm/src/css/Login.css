@@ -33,7 +33,7 @@
 }
 
 /* active일때 */
-.member_chk .member:active, .notmember:active{
+.member_chk .member:active, .notmember:active, .member_chk .member{
     box-sizing: border-box;
     border-bottom:2px solid black;
     background-color: rgba(0,0,0,.2);
@@ -131,4 +131,15 @@ form {
     margin-left: 5px;
     padding:0 3px 3px;
     border-bottom: 1px solid black;
+}
+
+.false{
+    background-color: #c4c4c4;
+}
+
+.true{
+    background-color:rebeccapurple;
+    border:2px solid rebeccapurple;
+    color:white;
+    font-weight: bold;
 }

@@ -26,12 +26,50 @@
 }
 
 .theater_list {
-    padding: 10px 20px;
+    background-color:lavender;
+    padding: 20px 40px;
     line-height: 25px;
-    border:1px solid black;
     text-align: left;
     font-size: 12px;
     line-height: 20px;
     height:200px;
-    border-radius: 5px;
+    border:1px solid lavender;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top:0px;
+}
+
+.theater_name {
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.locallist{
+    display:table;
+    width:100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+.locallist li{
+    width:100%;
+    /* box-sizing: border-box; */
+    display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    border: 2px solid rebeccapurple;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.clickedlocal {background-color: rebeccapurple; color:white; font-weight: bold;}
+
+.locallist li+li {border-left:0px;}
+
+.locallist li:first-child { border-top-left-radius:10px;}
+.locallist li:last-child {border-top-right-radius: 10px;}
+
+.theaterbox {
+    width: 100%;
 }

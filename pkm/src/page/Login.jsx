@@ -15,7 +15,7 @@ class Login extends Component {
       userName: "",
       idChecked:false,
       pwChecked:false,
-      btnColor:"#b2dffc",
+      btnColor:"false",
     };
   }
   //메인 home
@@ -48,10 +48,10 @@ class Login extends Component {
 
   btnChangeColor = () => {
     if(this.state.idChecked&&this.state.pwChecked) {
-      this.setState({btnColor:"#83ccfb"});
+      this.setState({btnColor:"true"});
     }
     else {
-      this.setState({btnColor:"#b2dffc"});
+      this.setState({btnColor:"false"});
     }
   }
 
@@ -107,8 +107,9 @@ class Login extends Component {
                 </div>
                 
                 <div class="btnwrap">
-                  <input type="submit" id = "loginbtn" value="로그인" onClick={this.btnClick}/>
+                  <input type="submit" className={this.state.btnColor} value="로그인" onClick={this.btnClick}/>
                 </div>
+                
                 <div className="sign">
                   <p>아직 회원이 아니시라면?</p>
                   <a href="/">회원가입</a>

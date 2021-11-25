@@ -7,13 +7,56 @@ import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
 
 class Reservation extends Component {
+  constructor() {
+    super();
+
+    this.state={
+      theaterchk :false,
+      moviechk:false,
+      datechk:false,
+      timechk:false,
+      currentStep:"one",
+    };
+  }
+
+  changeStep = () => {
+    if(this.state.theaterchk&&this.state.moviechk&&this.state.datechk&&this.state.timechk) {
+      this.setState({currentStep:"two"});
+    }
+    else {
+      this.setState({btnColor:"false"});
+    }
+  }
+
   render(){
     return(
       <div className="Reservation">
         <HeaderBlackVersion />
         <div className="rsv_content">
           <p className="rsv_title">티켓 예매<img src={ticket} className="ticket_icon" alt="ticket" /></p>
-          <div className = "box_wrap">
+          <div class="reserve-container">
+        <div class="movie-part">
+            <div class="reserve-title">영화</div>
+            <div class="sort-wrapper">
+                <div class="sort-rate sort-selected">예매율순</div>
+                <div class="sort-korean">가나다순</div>
+            </div>
+            <div class="movie-list">영화 목록 가져오기 </div>
+        </div>
+        <div class="theater-part">
+            <div class="reserve-title">극장</div>
+            <div></div>
+        </div>
+        <div class="day-part">
+            <div class="reserve-title">날짜</div>
+            <div class="reserve-date"></div>
+        </div>
+        <div class="time-part">
+            <div class="reserve-title">시간</div>
+        </div>
+
+    </div>
+          {/* <div className = "box_wrap">
             <div className="calendar_wrap">
               <div className="calendar">
                 <p>2021.11</p>
@@ -90,7 +133,7 @@ class Reservation extends Component {
                   </table>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <FooterBlack />
       </div>

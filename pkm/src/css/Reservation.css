@@ -3,7 +3,6 @@
 .Reservation {
     max-width: 1024px;
     font-family: 'Roboto', sans-serif;
-    height: 1200px;
     background-color: white;
     margin:0 auto;
     align-items: center;
@@ -13,6 +12,7 @@
 .rsv_content{
     align-items: center;
     margin: 70px auto;
+    height:100%;
     text-align:center;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .box_wrap{
-    height:100%;
+    height: 100%;
     /* 확인겸 */
 }
 
@@ -66,6 +66,7 @@
     vertical-align: middle;
 }
 .choice_wrap{
+    height: 100%;
     justify-content: space-between;
     width:100%;
     display: flex;
@@ -85,7 +86,7 @@
 
 .box {
     width: 100%;
-    height:800px;
+    height: 100%;
 }
 
 .box table {
@@ -134,4 +135,119 @@ td:last-child{
 
 .check p{
     line-height: 40px;
+}
+
+
+.reserve-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    /* border: 1px solid #dddddd; */
+}
+
+.reserve-container>div {
+    border: 1px solid #dddddd;
+}
+
+.reserve-title {
+    border-bottom: 1px solid #dddddd;
+    background-color: #444444;
+    text-align: center;
+    color: #dddddd;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.movie-part {
+    width: 284px;
+}
+
+.theater-part {
+    width: 264px;
+}
+
+.day-part {
+    width: 91px;
+}
+
+.time-part {
+    width: 384px;
+}
+
+.sort-wrapper {
+    margin: 10px 6px 6px 10px;
+    /* padding: 3px; */
+    display: flex;
+    border-bottom: 1px solid #dddddd;
+    font-size: 12px;
+}
+
+.sort-wrapper>div {
+    padding: 3px;
+}
+
+.sort-wrapper>div:hover {
+    border-bottom: 1px solid #111111;
+}
+
+.sort-selected {
+    font-weight: bold;
+    border-bottom: 1px solid #111111;
+}
+
+.sort-korean {
+    margin-left: 6px;
+}
+
+.reserve-date {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 770px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.movie-date-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 2px;
+}
+
+.movie-week-of-day {
+    margin-left: 5px;
+    font-size: 10px;
+    width: 12px;
+    height: 22px;
+    line-height: 22px;
+}
+
+.movie-day {
+    text-align: center;
+    width: 34px;
+    height: 22px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.saturday {
+    color: #31597E;
+    font-weight: bold;
+}
+
+.sunday {
+    color: #AF2D2D;
+    font-weight: bold;
+}
+
+.movie-date-wrapper-active {
+    background-color: #333333;
+}
+
+.movie-date-wrapper-active>* {
+    color: white;
 }

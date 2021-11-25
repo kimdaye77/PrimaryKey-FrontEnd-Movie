@@ -59,7 +59,16 @@ class Theater extends Component {
                 <div className="title"></div>
                 <div className="theaterbox">
                   <div className="theater_local">
-                    지역들
+                    <ul className="locallist">
+                      <li className="clickedlocal">서울</li>
+                      <li>경기/인천</li>
+                      <li>충청/대전</li>
+                      <li>전라/광주</li>
+                      <li>경북/대구</li>
+                      <li>경남/부산/울산</li>
+                      <li>강원</li>
+                      <li>제주</li>
+                    </ul>
                   </div>
                   <div className="theater_list">                
                       {theaterList.map((theater)  => (
