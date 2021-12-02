@@ -33,7 +33,8 @@ class MovieList extends Component {
   getMovies = async () => {
     const {
       data: {
-        data: {movies},
+        data:
+           {movies},
     },
   } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
     this.setState({isLoading:false, movies});
@@ -48,6 +49,7 @@ class MovieList extends Component {
     
   render(){
     const {isLoading, movies}= this.state;
+    let title = "";
     return (
       <>
         <Swiper

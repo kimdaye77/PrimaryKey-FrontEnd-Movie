@@ -251,3 +251,108 @@ td:last-child{
 .movie-date-wrapper-active>* {
     color: white;
 }
+
+button {
+    background-color:inherit;
+    border: 0px;
+    width:100%;
+    line-height: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.reservedlocallist > button{
+    line-height: 40px;
+    font-size: 13px;
+    /* background-color: rgba(0,0,0,0.2); */
+    border-top: 1px solid rgba(0,0,0,0.5);
+}
+.reservedlocallist > button:last-child, .reservedlocallist > button:last-child:first-child{
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+#true{
+    background-color:purple;
+    color:white;
+    font-weight: bold;
+}
+/* #true{
+    background-color:rgba(0,0,0,0.8);
+    color:white;
+    font-weight: bold;
+} */
+
+.lis{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.lis{
+    line-height: 35px;
+}
+
+
+.schedule button{
+    vertical-align: middle;
+    text-align: left;
+    align-items: left;
+    margin: 10px auto;
+}
+
+.schedule button::after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+#info {float:left; padding-left: 10px;}
+
+#iternals, #ddun {
+    float: right;
+}
+
+#iternals img, #ddun img {
+    vertical-align: middle;
+    width:150px;
+    height:200px;
+    padding-right: 10px;
+}
+
+.movie-list span{
+    line-height: 40px;
+    padding:10px 100px;
+    border-bottom : 1px solid purple;
+}
+
+.movie-list button {
+    height:50px
+}
+
+.rsv_content>#activebtn{
+    float:right;
+    background-color: slateblue;
+}
+
+.rsv_content>#activebtn::after{
+    display: block;
+    content:'';
+    clear:both;
+}
+
+.movie #default{
+    display:none;
+}
+
+.movie #theater {
+    display:block;
+}
+
+.time-part #default  {
+    display: none;
+}
+
+.time-part #activebtn {
+    display:block;
+}

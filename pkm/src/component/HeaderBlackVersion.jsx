@@ -7,21 +7,40 @@ import search from '../asset/search_b.png';
 import menu from '../asset/menu_b.png';
 import '../css/reset.css';
 import '../css/HeaderBlackVersion.css';
+import { getUser, getToken, removeUserSession } from '../utils/Common.js';
+ 
 
 
-function HeaderBlackVersion() {
+function HeaderBlackVersion(props) {
+  const user = getUser();
+  const token = getToken();
+ 
+  // handle click event of logout button
+  const handleLogout = () => {
+    removeUserSession();
+    props.history.push('/Login');
+  }
+ 
     
   return(
     <div className="Header_b">
       <div className="information">
-      <nav>
-        <ul>
-          <li><NavLink to = "/Login">로그인</NavLink></li>
-          <li>회원가입</li>
-          <li>ENGLISH</li>
-          <li><img src={language} className="language" alt="language" /></li>
-        </ul>
-      </nav>
+      <div>
+      {getToken()==null? (
+        <nav>
+          <ul>
+            <li><NavLink to = "/Login?#">로그인</NavLink></li>
+            <li>회원가입</li>
+            <li>ENGLISH</li>
+            <li><img src={language} className="language" alt="language" /></li>
+          </ul>
+        </nav>):(
+          <div>
+            <span>{getUser()}님 환영합니다.<br /><br /></span>
+          <input type="button" onClick={handleLogout} value="Logout" />
+        </div>
+        )}
+        </div>
     </div>
     <div className="Navigation">
       <nav>

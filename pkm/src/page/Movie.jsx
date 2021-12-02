@@ -9,6 +9,7 @@ class Movie extends Component {
     return(
       <div className="Reservation">
         <HeaderBlackVersion />
+        
         <FooterBlack />
       </div>
     );

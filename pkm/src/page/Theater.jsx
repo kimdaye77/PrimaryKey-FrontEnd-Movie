@@ -6,29 +6,27 @@ import '../css/Theater.css';
 import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
 import PropTypes from "prop-types";
+import { getToken } from '../utils/Common';
 
 class Theater extends Component {
+
   state = {
     isLoading: true,
     theaterList: [],
-    theaterInfo:[],
     clickedTheater :"",
   };
 
   getTheaters = async()=> {
-    const {
-        data: {
-            theaterList
-        },
-
-    } = await axios.get("http://user.primarykey.shop:3000/theater");
-    const {
-      data:{
-        theaterInfo
-      },
-    } = await axios.get("http://user.primarykey.shop:3000/theater/:theaterID");
-    this.setState({isLoading:false, theaterList, theaterInfo});
+  
+    const res= await axios.get("http://user.primarykey.shop:3000/theater?theaterAddress=서울", {
+      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+);
+    const theaterList = res.data;
+      
+    this.setState({isLoading:false, theaterList});
+    console.log(theaterList);
   };
+  
 
   componentDidMount()  {
   //영화데이터로딩
@@ -70,24 +68,19 @@ class Theater extends Component {
                       <li>제주</li>
                     </ul>
                   </div>
-                  <div className="theater_list">                
-                      {theaterList.map((theater)  => (
-                          theater_name = theater.theater_name,
-                         <a href="#" className="theater_name" onClick={(e, clickedTheater) => (theater_name = theater.theater_name, clickedTheater=theater_name,  this.handleClick(e, clickedTheater), this.handleClick = this.handleClick.bind(this))}>
-                           {theater_name} <br></br></a>
-                      ))
-                        }
+                  <div className="theater_list">           
+                    {theaterList.map((theater)  => (
+                        theater_name = theater.theater_name,
+                        <button className = "lis" onClick={(e, clickedTheater) => (theater_name = theater.theater_name, clickedTheater=theater_name,  this.handleClick(e, clickedTheater), this.handleClick = this.handleClick.bind(this))}>
+                          {theater_name} <br></br></button>
+                    ))
+                      }
                         
                     
                       
                   </div>  
                   <div className="gangnam">
-                    {theaterInfo.map((t) => (
-                        <TheaterApi
-                            theater_name={t.theater_name}
-                            theater_image = {t.theater_image}
-                        />
-                    ))}
+                    
                   </div>      
                 </div>
                           

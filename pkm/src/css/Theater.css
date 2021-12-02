@@ -63,7 +63,7 @@
     font-size: 13px;
 }
 
-.clickedlocal {background-color: rebeccapurple; color:white; font-weight: bold;}
+.clickedlocal { background-color: rebeccapurple; color:white; font-weight: bold;}
 
 .locallist li+li {border-left:0px;}
 

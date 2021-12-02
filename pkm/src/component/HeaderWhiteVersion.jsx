@@ -8,21 +8,35 @@ import menu from '../asset/menu.png';
 import '../css/reset.css';
 import '../css/HeaderWhiteVersion.css';
 import '../App.css';
+import { getToken, getUser, removeUserSession } from '../utils/Common.js';
+ 
 
 
-function HeaderWhiteVersion() {
-    
+
+function HeaderWhiteVersion(props) {
+ 
+  // handle click event of logout button
+  const handleLogout = () => {
+    removeUserSession();
+    props.history.push('/Login');
+  }
     return(
       <div className="Header">
         <div className="information">
+        {getToken()==null? (
         <nav>
           <ul>
-            <li><NavLink to = "/Login">로그인</NavLink></li>
+            <li><NavLink to = "/Login?#">로그인</NavLink></li>
             <li>회원가입</li>
             <li>ENGLISH</li>
             <li><img src={language} className="language" alt="language" /></li>
           </ul>
-        </nav>
+        </nav>):(
+          <div>
+            <span>{getUser()}님 환영합니다.<br /><br /></span>
+          <input type="button" onClick={handleLogout} value="Logout" />
+        </div>
+        )}
       </div>
       <div className="Navigation">
         <nav>
