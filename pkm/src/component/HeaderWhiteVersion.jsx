@@ -9,8 +9,8 @@ import '../css/reset.css';
 import '../css/HeaderWhiteVersion.css';
 import '../App.css';
 import { getToken, getUser, removeUserSession } from '../utils/Common.js';
- 
 
+import { withRouter } from 'react-router-dom';
 
 
 function HeaderWhiteVersion(props) {
@@ -18,7 +18,7 @@ function HeaderWhiteVersion(props) {
   // handle click event of logout button
   const handleLogout = () => {
     removeUserSession();
-    props.history.push('/Login');
+    document.location.href = '/';
   }
     return(
       <div className="Header">

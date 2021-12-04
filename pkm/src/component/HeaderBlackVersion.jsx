@@ -9,7 +9,7 @@ import '../css/reset.css';
 import '../css/HeaderBlackVersion.css';
 import { getUser, getToken, removeUserSession } from '../utils/Common.js';
  
-
+import { withRouter } from 'react-router-dom';
 
 function HeaderBlackVersion(props) {
   const user = getUser();
@@ -18,10 +18,9 @@ function HeaderBlackVersion(props) {
   // handle click event of logout button
   const handleLogout = () => {
     removeUserSession();
-    props.history.push('/Login');
+    document.location.href = '/';
   }
  
-    
   return(
     <div className="Header_b">
       <div className="information">

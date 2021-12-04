@@ -6,6 +6,8 @@ import '../css/reset.css';
 import '../css/Login.css';
 import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
+import { withRouter } from 'react-router-dom';
+
 
 function Login(props) {
   const useFormInput = initialValue => {
@@ -24,29 +26,30 @@ function Login(props) {
   const password = useFormInput('');
   const [error, setError] = useState(null);
 
- 
 
-  const handleLogin = () => {
+  const handleLogin=(e)=> {
+    e.preventDefault();
     console.log("사용자 ID :", login_id.value);
     console.log("사용자 password :", password.value);
     setError(null);
     setLoading(true);
     axios.post('http://user.primarykey.shop:3000/auth/user', { login_id: login_id.value, password: password.value }).then(response => {
-      setLoading(false);      
+      setLoading(false);     
       if(response.status==200){
         const token = response.data.jwt;
         const user = login_id.value;
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         setUserSession(axios.defaults.headers.common['Authorization'], login_id.value);
-        props.history.push("/");       
+        alert("로그인 성공");
+        props.history.push("/");      
       }   
       else {
-        setError("아이디/비밀번호가 틀렸습니다.");
+        alert("아이디/비밀번호가 틀렸습니다.");
       }
     }).catch(error => {
       setLoading(false);
-      if (error.response === 401) setError(error.response.data.message);
-      else setError("Something went wrong. Please try again later.");
+      if (error.response === 401) alert("아이디/비밀번호가 틀렸습니다.");
+      else alert("아이디/비밀번호가 틀렸습니다.");
     });
   };
   return(
@@ -94,4 +97,4 @@ function Login(props) {
 
 }
 
-export default Login;
+export default withRouter(Login);

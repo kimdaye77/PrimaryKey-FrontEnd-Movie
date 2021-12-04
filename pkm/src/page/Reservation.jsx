@@ -24,6 +24,7 @@ class Reservation extends Component {
       isLoading: true,
       theaterList: [],
       clickedTheater :null,
+      clickedSchedule:null,
       schedule:[],
       step:"default",
     };
@@ -98,29 +99,39 @@ class Reservation extends Component {
             return result
   };
 
-  addEventListener = (clickedDate) => {
+  addEventListener = () => {
   };
 
   dayClickEvent = (clickedDate) => {
+    this.setState({clickedDate:clickedDate});
     console.log(this.state.clickedDate);
     this.addEventListener(clickedDate);
     this.activeStep();
   };
 
   localClickEvent = (clickedLocal) => {
+    this.setState({clickedLocal:clickedLocal});
     console.log(this.state.clickedLocal);
     this.addEventListener(clickedLocal);
     this.activeStep();
   };
 
   movieClickEvent = (clickedMovie) => {
+    this.setState({clickedMovie:clickedMovie});
     console.log(this.state.clickedMovie);
     this.addEventListener(clickedMovie);
     this.activeStep();
   };
 
+  scheduleClickEvent = (clickedSchedule) => {
+    this.setState({clickedSchedule:clickedSchedule});
+    console.log(this.state.clickedSchedule);
+    this.addEventListener(clickedSchedule);
+    this.activeStep();
+  };
+
   activeStep = () => {
-    if(this.state.clickedDate!=0 && this.state.clickedLocal!=null&& this.state.clickedTheater!=null && this.state.clickedMovie!=null) {
+    if (this.state.clickedSchedule!=null){
       this.setState({step:"activebtn"});
     }
     console.log(this.state.step);
@@ -160,11 +171,12 @@ class Reservation extends Component {
             </div>
             <div className="movie-list">
               <span>영화 목록</span>
-              <div className="movie" >
+              {this.state.clickedTheater!=null?(
+                <div className="movie" >
                 {schedule.map((sch)  => (
                   <div>
                     {sch.title!=tmp?
-                      (<button id={clickedMovie} onClick = {()=>(this.setState({step:"movie"}),this.setState({clickedMovie:"이터널스"}), this.movieClickEvent(this.state.clickedMovie))}>
+                      (<button id={clickedMovie} onClick = {()=>(this.state.step="movie",this.state.clickedMovie="이터널스", this.movieClickEvent(this.state.clickedMovie))}>
                         {tmp = sch.title}
                       </button>):
                       (<></>)}
@@ -172,20 +184,22 @@ class Reservation extends Component {
                   ))
                     }
              </div>
+              ):(
+                <></>
+              )}
           </div>
         </div>
         <div className="theater-part">
             <div className="reserve-title">극장</div>
                           
             <div className="reservedlocallist">
-               <button id={clickedLocal} onClick = {()=>(this.setState({step:"local"}), this.setState({clickedLocal:"서울"}), this.localClickEvent(this.state.clickedLocal))}>서울</button>
-                {console.log(this.state.clickedLocal)}
+               <button id={clickedLocal} onClick = {()=>(this.state.step="local", this.state.clickedLocal="서울", this.localClickEvent(this.state.clickedLocal))}>서울</button>
                 {this.state.clickedLocal!=null?(
                   <>
                   <div className="theater_l" >
                   {theaterList.map((theater)  => (
                       theater_name = theater.theater_name,
-                      <button id={clickedTheater} className = "lis" onClick={(e, clickedTheater) => (theater_name = theater.theater_name, clickedTheater=theater_name,this.setState({step:"theater"}),   this.handleClick(e, clickedTheater), this.handleClick = this.handleClick.bind(this))}>
+                      <button id={clickedTheater} className = "lis" onClick={(e, clickedTheater) => (this.state.step="theater", theater_name = theater.theater_name, clickedTheater=theater_name,this.handleClick(e, clickedTheater), this.handleClick = this.handleClick.bind(this))}>
                         {theater_name} <br></br></button>
                    ))
                      }
@@ -212,7 +226,7 @@ class Reservation extends Component {
                         spandate = result.props.id,
                         spanday = result.props.className,
                         <button className={spanday} onClick={() => (spandate = result.props.id,
-                          spanday = result.props.className, this.setState({step:"date"}), this.state.clickedDate=spandate, this.dayClickEvent(this.state.clickedDate))}>
+                          spanday = result.props.className, this.state.step="date", this.state.clickedDate=spandate, this.dayClickEvent(this.state.clickedDate))}>
                           {spandate}
                         </button>
               ))
@@ -222,36 +236,37 @@ class Reservation extends Component {
         </div>
         <div className="time-part">
             <div className="reserve-title">시간</div>
-            <div id = {step} className="schedule" >
-                  {schedule.map((sch)  => (
-                    <button>
-                      <div id="info">
-                        <div>영화 | {sch.title}</div>
-                        <div>러닝타임 | {sch.running_time}</div>
-                        <div>장르 | {sch.genre}</div>
-                        <div>개봉일 | {sch.open_date}</div>
-                        <div>상영관 | {sch.hall_name}</div>
-                        <div>영화 타입 | {sch.type}</div>
-                        <div>시작시간 | {sch.start_time}</div>
-                        <div>종료시간 | {sch.end_time}</div>
-                      </div>
-                      
-                      {sch.title=="이터널스"?
-                      (<div id="iternals">
-                        <img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />
-                      </div>):
-                      //듄
-                      (<div id="ddun">
-                         <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
-                      </div>)}
-                  </button>
-                    
-                    
-                      
-            
-                   ))
-                     }
-             </div>
+            {this.state.clickedMovie!=null?(
+              <div id = {step} className="schedule" >
+              {schedule.map((sch)  => (
+                <button  onClick = {()=>(this.state.step="schedule", this.state.clickedSchedule=1, this.scheduleClickEvent(this.state.clickedSchedule))}>
+                  <div id="info">
+                    <div>영화 | {sch.title}</div>
+                    <div>러닝타임 | {sch.running_time}</div>
+                    <div>장르 | {sch.genre}</div>
+                    <div>개봉일 | {sch.open_date}</div>
+                    <div>상영관 | {sch.hall_name}</div>
+                    <div>영화 타입 | {sch.type}</div>
+                    <div>시작시간 | {sch.start_time}</div>
+                    <div>종료시간 | {sch.end_time}</div>
+                  </div>
+                  
+                  {sch.title=="이터널스"?
+                  (<div id="iternals">
+                    <img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />
+                  </div>):
+                  //듄
+                  (<div id="ddun">
+                     <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
+                  </div>)}
+              </button>
+         
+               ))
+                 }
+         </div>
+            ):(
+              <></>
+            )}
         </div>
     </div>
     
