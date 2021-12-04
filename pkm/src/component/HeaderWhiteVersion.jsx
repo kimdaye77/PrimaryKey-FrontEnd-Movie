@@ -26,14 +26,16 @@ function HeaderWhiteVersion(props) {
         {getToken()==null? (
         <nav>
           <ul>
-            <li><NavLink to = "/Login?#">로그인</NavLink></li>
+            <li><NavLink to = "/Login">로그인</NavLink></li>
             <li>회원가입</li>
             <li>ENGLISH</li>
             <li><img src={language} className="language" alt="language" /></li>
           </ul>
         </nav>):(
           <div>
-            <span>{getUser()}님 환영합니다.<br /><br /></span>
+            <span>{getUser()}님 환영합니다.</span>
+            <br /><br />
+            <span className="mypage"><NavLink to = "/Mypage">마이페이지</NavLink></span>
           <input type="button" onClick={handleLogout} value="Logout" />
         </div>
         )}

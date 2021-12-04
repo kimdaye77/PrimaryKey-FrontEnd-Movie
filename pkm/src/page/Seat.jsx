@@ -5,16 +5,25 @@ import axios from "axios";
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
 
 function Seat() {
-    let test = [];
     let selectedSeats = new Array();
     let selectedSeatsMap = [];
     const seatWrapper = [];
     let clicked = "";
     const arr = [];
+    let restSeats = [];
 
-    for (let i = 0; i < 7; i++) {
+    function getInfo() {
+
+        const res = axios.get("http://user.primarykey.shop:3000/seats/2", {
+            headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+          );
+          restSeats=res;
+          console.log(res);
+      }
+
+    function checkClicked() {for (let i = 0; i < 7; i++) {
         seatWrapper.push(i);
-        for (let j = 0; j < 13; j++) {
+        for (let j = 1; j < 13; j++) {
             const input = document.createElement('input');
             input.type = "button";
             input.name = "seats"
@@ -47,6 +56,7 @@ function Seat() {
             })
         }
     }
+}
 
     function mapping(input, i, j) {
         if (i === 0) {
@@ -66,18 +76,11 @@ function Seat() {
         }
     }
 
-    function getSeats() {
-    
-        const res=axios.get("http://user.primarykey.shop:3000/seats/:seatID", {
-          headers: { Authorization: axios.defaults.headers.common['Authorization']}}
-        );
-        const restSeats = res.data;
-        console.log(res);
-        
-      }
-    
     return (
+        
         <div className="Seat">
+            {getInfo()}
+            {checkClicked()}
             <HeaderBlackVersion />
             <div className="seatcontent">
             <p className="seat_title">좌석 예매</p>
@@ -86,16 +89,20 @@ function Seat() {
                 </div>
                 <div className="seatbox">
                         {arr.map((result)  => (
-                            <button className="seat">
+                            <button onClick = {checkClicked} className="seat">
                                 {result.value}
                             </button> 
                         ))
                         }   
                     </div>
             </div>
-            <button id="ref" onClick = {()=>getSeats()}>잔여 좌석 조회</button>
-                
-            
+            <div>
+                <p>선택한 좌석</p>
+                <div>
+                    {selectedSeats}
+                </div>
+            </div>
+                  
             </div>
         </div>
         

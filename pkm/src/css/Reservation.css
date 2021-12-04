@@ -331,14 +331,22 @@ button:hover {
 }
 
 .rsv_content>#activebtn{
-    float:right;
-    background-color: slateblue;
+    background-color: lavender;
+    border:2px solid purple;
+    box-sizing: border-box;
 }
 
 .rsv_content>#activebtn::after{
     display: block;
     content:'';
     clear:both;
+}
+
+.stepbutton {
+    margin-top:80px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border:2px solid black;
 }
 
 .movie #default{
@@ -355,4 +363,19 @@ button:hover {
 
 .time-part #activebtn {
     display:block;
+    box-sizing: border-box;
+}
+
+#서울{
+    background-color: rgba(0, 0, 0, 0.7);
+    color:white;
+}
+
+#강남점:first-child, 
+#이터널스:first-child,
+#ten:nth-child(7),
+#first:first-child
+{
+    background-color:lavender;
+    border:1px solid purple;
 }

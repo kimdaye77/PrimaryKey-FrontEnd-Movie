@@ -1,12 +1,11 @@
 import React, { Component} from 'react';
 import '../css/reset.css';
 import '../css/Reservation.css';
-import ticket from '../asset/ticket.png';
 import TheaterApi from '../component/TheaterApi';
 import axios from "axios";
 import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
-import { getToken } from '../utils/Common';
+import { getToken } from '../utils/Common.js';
 
 class Reservation extends Component {
   constructor() {
@@ -32,22 +31,25 @@ class Reservation extends Component {
   }
 
   getTheaters = async()=> {
-    const accessToken = getToken();
-    
+    const token = getToken();
+
     const res= await axios.get("http://user.primarykey.shop:3000/theater?theaterAddress=서울", {
       headers: { Authorization: axios.defaults.headers.common['Authorization']}}
-    );
+      // headers: {
+      //   Authorization: `Bearer ${token}`}}
+      );
     const theaterList = res.data;
     console.log(res);
     const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-11-10",{ 
       headers: { Authorization: axios.defaults.headers.common['Authorization']}}
-    );
+      // headers: {
+      //   Authorization: `Bearer ${token}`}}
+      );
     const schedule = r.data;
     console.log(r);
     this.setState({isLoading:false, theaterList, schedule});
     console.log(theaterList);
     console.log(schedule);
-    
   }
   
 
@@ -63,9 +65,6 @@ class Reservation extends Component {
     this.activeStep();
     console.log(clickedTheater);
   };
-
-
-  
 
   writeDay = () => {
     let {clickedDate} = this.state.clickedDate;
@@ -104,6 +103,9 @@ class Reservation extends Component {
 
   dayClickEvent = (clickedDate) => {
     this.setState({clickedDate:clickedDate});
+    if(clickedDate=="10"){
+      this.setState({clickedDate:"ten"});
+    }
     console.log(this.state.clickedDate);
     this.addEventListener(clickedDate);
     this.activeStep();
@@ -138,7 +140,7 @@ class Reservation extends Component {
   }
 
   changeStep = () => {
-    if(this.state.step!="default") {
+    if(this.state.step=="activebtn") {
       this.props.history.push("/Seat")
     }
     else {
@@ -148,11 +150,10 @@ class Reservation extends Component {
 
 
   render(){
-    
     let spandate = 0;
     let spanday = 0;
     let tmp = "";
-    const {theaterList, schedule, step, clickedLocal, clickedMovie, clickedTheater, clickedDate}= this.state;
+    const {theaterList, schedule, step, clickedLocal, clickedMovie, clickedTheater, clickedDate, clickedSchedule}= this.state;
     
 
     let theater_name = "";
@@ -160,8 +161,8 @@ class Reservation extends Component {
       <div className="Reservation">
         <HeaderBlackVersion />
         <div className="rsv_content">
-          <button id={step} onClick={()=>this.changeStep()}>좌석 선택</button>
-          <p className="rsv_title">티켓 예매<img src={ticket} className="ticket_icon" alt="ticket" /></p>
+          <p className="rsv_title">티켓 예매</p>
+          <button className="stepbutton" id={step} onClick={()=>this.changeStep()}>좌석 선택</button>
           <div className="reserve-container">
         <div className="movie-part">
             <div className="reserve-title">영화</div>
@@ -171,12 +172,12 @@ class Reservation extends Component {
             </div>
             <div className="movie-list">
               <span>영화 목록</span>
-              {this.state.clickedTheater!=null?(
+              {this.state.clickedTheater=="강남점"&&this.state.clickedDate!=0?(
                 <div className="movie" >
                 {schedule.map((sch)  => (
-                  <div>
+                  <div id={clickedMovie}>
                     {sch.title!=tmp?
-                      (<button id={clickedMovie} onClick = {()=>(this.state.step="movie",this.state.clickedMovie="이터널스", this.movieClickEvent(this.state.clickedMovie))}>
+                      (<button onClick = {()=>(this.state.step="movie",this.state.clickedMovie="이터널스", this.movieClickEvent(this.state.clickedMovie))}>
                         {tmp = sch.title}
                       </button>):
                       (<></>)}
@@ -194,7 +195,7 @@ class Reservation extends Component {
                           
             <div className="reservedlocallist">
                <button id={clickedLocal} onClick = {()=>(this.state.step="local", this.state.clickedLocal="서울", this.localClickEvent(this.state.clickedLocal))}>서울</button>
-                {this.state.clickedLocal!=null?(
+                {this.state.clickedLocal=="서울"?(
                   <>
                   <div className="theater_l" >
                   {theaterList.map((theater)  => (
@@ -206,7 +207,8 @@ class Reservation extends Component {
              </div>
              </>)
                 :
-                <></>}
+                <>
+                </>}
                 
                 <button onClick = {()=>(this.state.clickedLocal="경기/인천", this.localClickEvent(this.state.clickedLocal))}>경기/인천</button>
                 <button onClick = {()=>(this.state.clickedLocal="충청/대전", this.localClickEvent(this.state.clickedLocal))}>충청/대전</button>
@@ -223,12 +225,14 @@ class Reservation extends Component {
             <div className="reserve-date" >
             
               {this.writeDay().map((result)  => (
-                        spandate = result.props.id,
-                        spanday = result.props.className,
-                        <button className={spanday} onClick={() => (spandate = result.props.id,
-                          spanday = result.props.className, this.state.step="date", this.state.clickedDate=spandate, this.dayClickEvent(this.state.clickedDate))}>
-                          {spandate}
-                        </button>
+                spandate = result.props.id,
+                spanday = result.props.className,
+                <>
+                <button id={clickedDate} className={spanday} onClick={() => (spandate = result.props.id,
+                  spanday = result.props.className, this.state.step="date", this.state.clickedDate=spandate, this.dayClickEvent(this.state.clickedDate))}>
+                  {spandate}
+                </button>
+                </>
               ))
               }          
             </div>
@@ -239,7 +243,7 @@ class Reservation extends Component {
             {this.state.clickedMovie!=null?(
               <div id = {step} className="schedule" >
               {schedule.map((sch)  => (
-                <button  onClick = {()=>(this.state.step="schedule", this.state.clickedSchedule=1, this.scheduleClickEvent(this.state.clickedSchedule))}>
+                <button id={clickedSchedule} onClick = {()=>(this.state.step="schedule", this.state.clickedSchedule="first", this.scheduleClickEvent(this.state.clickedSchedule))}>
                   <div id="info">
                     <div>영화 | {sch.title}</div>
                     <div>러닝타임 | {sch.running_time}</div>

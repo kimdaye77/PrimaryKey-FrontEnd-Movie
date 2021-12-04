@@ -10,18 +10,28 @@
 }
 
 .seatcontent{
-    width:390px;
     margin:0 auto;
     align-items: center;
     height:100%;
     text-align:center;
 }
 
+.seatwrap {
+    width:420px;
+    text-align: center;
+    margin:0 auto;
+    align-items: center;
+    vertical-align: middle;
+}
 
 .screen {
+    width:100%;
+    text-align: center;
     vertical-align: middle;
-    background-color: slateblue;
-    width:390px;
+    background-color: lavender;
+    border:2px solid purple;
+    padding: 10px 0 ;
+    margin: 0 0 20px 0;
     line-height:50px;
 }
 .seat_title {
@@ -31,8 +41,8 @@
 }
 
 .seat {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     text-align: center;
     margin:0 auto;
     vertical-align: middle;
@@ -46,4 +56,8 @@
 .clicked {
     background-color: red;
     color: white;
+}
+
+#ref {
+    margin-top:10px;
 }
