@@ -13,9 +13,9 @@ import axios from "axios";
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 
-import PrivateRoute from './utils/PrivateRoute';
-import PublicRoute from './utils/PublicRoute';
-import { getToken, removeUserSession, setUserSession } from './utils/Common';
+import PrivateRoute from './utils/PrivateRoute.js';
+import PublicRoute from './utils/PublicRoute.js';
+import { getToken, removeUserSession, setUserSession } from './utils/Common.js';
 
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
@@ -30,7 +30,7 @@ function App() {
       setUserSession(response.data.token, response.data.user);
       setAuthLoading(false);
     }).catch(error => {
-      removeUserSession();
+      // removeUserSession();
       setAuthLoading(false);
     });
   }, []);
@@ -47,11 +47,11 @@ function App() {
           <Route exact={true} path={"/Movie"} component={Movie} />
           <PrivateRoute exact={true} path={"/Reservation"} component={Reservation} />
           <PrivateRoute exact={true} path={"/Theater"} component={Theater} />
-          <Route exact={true} path={"/Seat"} component={Seat} />
+          <PrivateRoute exact={true} path={"/Seat"} component={Seat} />
           <Route exact={true} path={"/"} component={Home}  />
-          <Route exact={true} path={"/Event"} component={Event} />
-          <Route exact={true} path={"/Store"} component={Store} />
-          <Route exact={true} path={"/Benefit"} component={Benefit} />
+          <PrivateRoute exact={true} path={"/Event"} component={Event} />
+          <PrivateRoute exact={true} path={"/Store"} component={Store} />
+          <PrivateRoute exact={true} path={"/Benefit"} component={Benefit} />
           </Switch>
         </BrowserRouter>
       </div>

@@ -1,6 +1,4 @@
 // return the user data from the session storage
-const token = null;
-const user = null;
 
 export const getUser = () => {
   const userStr = sessionStorage.getItem('user');
@@ -24,6 +22,4 @@ export const removeUserSession = () => {
 export const setUserSession = (token, user) => {
   sessionStorage.setItem('token', token);
   sessionStorage.setItem('user', JSON.stringify(user));
-  token = token;
-  user = user;
 }
