@@ -14,7 +14,6 @@
   height:100%;
   text-align: left;
 }
-
 .reserve_info{
   display:table-cell;
 }
@@ -39,12 +38,17 @@ img {
 }
 
 .user {
+  margin: 30px 0 0;
+  border: 2px solid black;
   padding:0 100px;
   font-size:13px;
 }
 
 .mypage_title {
-  padding:80px 0;
+  line-height: 27px;
+  width:100px;
+  border-bottom: 1px solid black;
+  margin:70px auto 20px;
   font-size: 18px;
   vertical-align: middle;
 }
@@ -61,7 +65,7 @@ img {
 
 #basic {color:brown; font-weight: bold;}
 #bar{
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius:20px;
   box-sizing: border-box;
 }
@@ -100,7 +104,7 @@ img {
 #change{
   margin:50px auto;
   padding:10px;
-  border: 1px solid black;
+  border: 2px solid black;
   background-color: rgba(0,0,0,0.2);
   width:200px;
   line-height: 20px;

@@ -10,7 +10,7 @@
 
 .theater{
     max-width: 1024px;
-    height:1000px;
+    height:2000px;
     align-items: center;
     margin: 0 auto;
     text-align:center;
@@ -73,3 +73,17 @@
 .theaterbox {
     width: 100%;
 }
+
+.gangnam{margin:50px auto;}
+
+.gangnam p {line-height: 30px; text-align:left; font-weight: bold;}
+#gangnamimg{
+    width: 100%;
+    height:500px;
+}
+
+#cinemaone{font-size:25px;
+    padding:10px auto;
+line-height: 30px;
+padding: 20px;
+text-align: left;}

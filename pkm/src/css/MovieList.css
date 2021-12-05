@@ -28,11 +28,27 @@
     border: 1px solid white;
  }
 
+ .movie_wrap{
+     width:300px;
+     margin:0 auto;
+     text-align: center;
+ }
+
 .poster img{
+    
     width:200px;
     height:300px;
     border-radius: 7px;
     padding:0 50px;
+}
+
+.title{
+    width:200px;
+    line-height: 30px;
+    padding-left:50px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
 }
 
 .swiper-button-prev, .swiper-button-next {

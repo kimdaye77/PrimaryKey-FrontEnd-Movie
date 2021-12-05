@@ -1,6 +1,5 @@
 //예매 순 영화 리스트
 import { Component } from 'react';
-import MovieApi from './MovieApi';
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
@@ -71,16 +70,15 @@ class MovieList extends Component {
                 <div className="movies">
                     {movies.map((movie)=> (
                       <SwiperSlide>
-                        <div className="poster">
-                          <MovieApi
-                            poster={movie.medium_cover_image}
-                            />
+                        <div className="movie_wrap">
+                          <div className="poster">
+                            <img src={movie.medium_cover_image} alt="" />
+                          </div>
+                          <div className="title">
+                            {movie.title}
+                          </div>     
                         </div>
-                        <div className="title">
-                          <MovieApi
-                            title={movie.title}
-                          />
-                        </div>                      
+                                         
                         </SwiperSlide>
                     ))}
                 </div>

@@ -17,6 +17,10 @@
 }
 
 .rsv_title {
+    line-height: 27px;
+    width:100px;
+    border-bottom: 1px solid black;
+    margin:70px auto 20px;
     font-size: 18px;
     vertical-align: middle;
 }
@@ -373,7 +377,7 @@ button:hover {
 
 #강남점:first-child, 
 #이터널스:first-child,
-#ten:nth-child(7),
+#ten:nth-child(6),
 #first:first-child
 {
     background-color:lavender;

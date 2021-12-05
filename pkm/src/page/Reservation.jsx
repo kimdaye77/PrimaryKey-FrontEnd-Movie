@@ -244,25 +244,29 @@ class Reservation extends Component {
               <div id = {step} className="schedule" >
               {schedule.map((sch)  => (
                 <button id={clickedSchedule} onClick = {()=>(this.state.step="schedule", this.state.clickedSchedule="first", this.scheduleClickEvent(this.state.clickedSchedule))}>
-                  <div id="info">
-                    <div>영화 | {sch.title}</div>
-                    <div>러닝타임 | {sch.running_time}</div>
-                    <div>장르 | {sch.genre}</div>
-                    <div>개봉일 | {sch.open_date}</div>
-                    <div>상영관 | {sch.hall_name}</div>
-                    <div>영화 타입 | {sch.type}</div>
-                    <div>시작시간 | {sch.start_time}</div>
-                    <div>종료시간 | {sch.end_time}</div>
-                  </div>
+                  
                   
                   {sch.title=="이터널스"?
-                  (<div id="iternals">
+                  (<>
+                  <div id="info">
+                  <div>영화 | {sch.title}</div>
+                  <div>러닝타임 | {sch.running_time}</div>
+                  <div>장르 | {sch.genre}</div>
+                  <div>개봉일 | {sch.open_date}</div>
+                  <div>상영관 | {sch.hall_name}</div>
+                  <div>영화 타입 | {sch.type}</div>
+                  <div>시작시간 | {sch.start_time}</div>
+                  <div>종료시간 | {sch.end_time}</div>
+                </div>
+                  <div id="iternals">
                     <img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />
-                  </div>):
+                  </div>
+                  </>):<></>
                   //듄
-                  (<div id="ddun">
-                     <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
-                  </div>)}
+                  // (<div id="ddun">
+                  //    <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
+                  // </div>)
+                  }
               </button>
          
                ))
