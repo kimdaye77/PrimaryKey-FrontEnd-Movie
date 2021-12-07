@@ -7,6 +7,7 @@ import Seat from './page/Seat.jsx'
 import Event from './page/Event.jsx';
 import Store from './page/Store.jsx';
 import Benefit from './page/Benefit.jsx';
+import Pay from './page/Pay.jsx';
 import Mypage from './page/Mypage.jsx';
 import './App.css';
 import React, {useEffect, useState} from "react";
@@ -44,6 +45,7 @@ function App() {
           <Switch>
           <PublicRoute exact={true} path={"/Login"} component={Login} />
           <PrivateRoute exact={true} path={"/Mypage"} component={Mypage} />
+          <PrivateRoute exact={true} path={"/Pay"} component={Pay} />
           <Route exact={true} path={"/Movie"} component={Movie} />
           <PrivateRoute exact={true} path={"/Reservation"} component={Reservation} />
           <PrivateRoute exact={true} path={"/Theater"} component={Theater} />

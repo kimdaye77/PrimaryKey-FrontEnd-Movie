@@ -7,6 +7,7 @@ import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
 import PropTypes from "prop-types";
 import { getToken } from '../utils/Common';
+import {NavLink} from "react-router-dom";
 
 class Theater extends Component {
   constructor() {
@@ -111,8 +112,8 @@ class Theater extends Component {
                       <p>6관 / 874석</p>
                       <div className="schedule">
                         <p className="theater_title">상영시간표</p>
-                      {schedule.map((sch)  => (
-                              <button>
+                     {schedule.map((sch)  => (
+                                 <button className="sch">
                                 
                                 <div id="info">
                                   <div>영화 | {sch.title}</div>
@@ -124,6 +125,7 @@ class Theater extends Component {
                                   <div>시작시간 | {sch.start_time}</div>
                                   <div>종료시간 | {sch.end_time}</div>
                               </div>
+                              <NavLink to = "/Seat"><p className="rsvbtn">예매하기</p></NavLink>
                               {sch.title=="이터널스"?
                               (
                                <div id="iternals">
@@ -134,7 +136,7 @@ class Theater extends Component {
                                    <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
                                 </div>)
                                 }
-                              </button>
+                              </button> 
                       ))
                     }
                                 

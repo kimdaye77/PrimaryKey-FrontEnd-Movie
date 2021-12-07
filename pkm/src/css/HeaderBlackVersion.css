@@ -1,6 +1,6 @@
 .Header_b{
     font-family: 'Roboto', sans-serif;
-    max-width:1024px;
+    max-width:1280px;
     text-align:center;
     align-items: center;
     margin: 0 auto;
@@ -68,23 +68,24 @@
     box-sizing: border-box;
     border-width: 80%;
     display:inline-block;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 25px;
     margin-top:20px;
     vertical-align:middle;
     align-items: center;
     text-align: center;
-    padding: 0px 2vw;
+    padding: 0px 1.5vw;
     z-index: 5;
 }
 
 .Navigation li:nth-child(3) {
-    padding-right:0;
     z-index: 10;
+    padding-right:-5px;
 }
 
 .Navigation li:nth-child(4) {
     z-index: -50;
+    padding-left:5px;
 }
 
 

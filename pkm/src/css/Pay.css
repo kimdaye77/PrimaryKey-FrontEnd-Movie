@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
 
 .Pay{
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
-  padding:50px 0;
-  background-color: black;
+    max-width: 1280px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    margin:0 auto;
+    align-items: center;
+    text-align:center;
 }
 
-.content {
-  font-size: 10px;
-  line-height: 20px;
-  color:white;
+
+.pay_content{
+    align-items: center;
+    margin: 70px auto;
+    height:100%;
+    text-align:center;
+}
+
+.pay_title {
+    line-height: 27px;
+    width:100px;
+    border-bottom: 1px solid black;
+    margin:70px auto 20px;
+    font-size: 18px;
+    vertical-align: middle;
 }

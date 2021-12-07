@@ -40,7 +40,7 @@ class Reservation extends Component {
       );
     const theaterList = res.data;
     console.log(res);
-    const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-11-10",{ 
+    const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-12-10",{ 
       headers: { Authorization: axios.defaults.headers.common['Authorization']}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}

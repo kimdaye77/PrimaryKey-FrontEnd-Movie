@@ -35,9 +35,8 @@
  }
 
 .poster img{
-    
-    width:200px;
-    height:300px;
+    width:250px;
+    height:350px;
     border-radius: 7px;
     padding:0 50px;
 }
@@ -45,7 +44,7 @@
 .title{
     width:200px;
     line-height: 30px;
-    padding-left:50px;
+    font-size:16px;
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;

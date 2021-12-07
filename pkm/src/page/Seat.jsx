@@ -13,7 +13,6 @@ class Seat extends Component {
           restSeats:[],
         };
       }
-
     getInfo =async() => {
         const res =await axios.get("http://user.primarykey.shop:3000/seats/2", {
             headers: { Authorization: axios.defaults.headers.common['Authorization']}}
@@ -26,7 +25,9 @@ class Seat extends Component {
         //영화데이터로딩
             this.getInfo();            
         }  
-        
+
+      
+  
 
     render(){
         const {restSeats} = this.state;
@@ -39,7 +40,7 @@ class Seat extends Component {
             <div className="seatwrap">
                 <div className="screen">스크린
                 </div>
-                <div className="seatbox">
+                <div>
                     <DrawSeat/>
                 </div>
             </div>

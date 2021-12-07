@@ -1,15 +1,17 @@
 import '../css/reset.css';
 import '../css/DrawSeat.css';
-import React, { Component, useState} from 'react';
-import axios from "axios";
-import PropTypes from "prop-types";
-import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
+import React, { Component, useState, useEffect} from 'react';
 import {NavLink} from "react-router-dom";
+import jQuery from 'jquery'; 
+import { getUser } from '../utils/Common';
 
-function DrawSeat(value) {
+function DrawSeat() {
+
     const seatWrapper = [];
     const arr = [];
     const [seats, selectedSeats] = useState([]);
+    const [cnt, count] = useState(0);
+    const [price, total] = useState(0);
     const [btn,setbtn] = useState("false");
     {for (let i = 0; i < 7; i++) {
         seatWrapper.push(i);
@@ -24,11 +26,11 @@ function DrawSeat(value) {
             const a = ["A7", "A8", "A9", "A10", "A11", "A12", "B1", "B2", "B3", "B4", "B5", "C9", "C10", "C11", "C12", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "D12", "E1", "E2", "E3", "E4"]
             if(a.includes(input.value)){
                 arr.push(<button onClick={()=>{clickedSeat(input.value)}} className="canreserve">{input.value}</button>);
-                console.log("잔여 좌석", input.value);
+                // console.log("잔여 좌석", input.value);
             }
             else{
                 arr.push(<p className="already">{input.value}</p>);
-                console.log("예매 불가", input.value);
+                // console.log("예매 불가", input.value);
             }
             
         }
@@ -58,22 +60,33 @@ function DrawSeat(value) {
         //A7 A8 A9 A10 A11 A12 B1 B2 B3 B4 B5
         //C9 C10 C11 C12 D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12 E1 E2 E3 E4
         const a = ["A7", "A8", "A9", "A10", "A11", "A12", "B1", "B2", "B3", "B4", "B5", "C9", "C10", "C11", "C12", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "D12", "E1", "E2", "E3", "E4"]
-        selectedSeats(seats => [...seats, seat]);
-        console.log(seats)
+        
+        if(seats.includes(seat)) {onRemove(seat); count(cnt => cnt-1); total(price=>price-13000)}
+        else{selectedSeats(seats => [...seats, seat]); count(cnt=>cnt+1); total(price=>price+13000)}
+        console.log(seats);
         console.log("clicked");
+
         setbtn("true");
     }
 
-    return (
-        <>
-            {arr.map((result)  => (
-                <div className="seat">
-                    {result}
-                </div> 
-            ))
-            } 
-            <div className = "selectbox">
-                <p>선택한 좌석</p>
+    const onRemove = (id) => {
+
+        selectedSeats(seats.filter((seat) => seat!== id));
+        };
+    
+    function drawSeat(){
+        return(<div className="seatbox">{arr.map((result)  => (
+            <div className="seat">
+                {result}
+            </div> 
+        ))
+        } </div>)
+    }
+
+    function drawSelect(){
+        return(<>
+        <div className = "selectbox">
+                <p>선택한 좌석 <span id="cnt">성인{cnt}명</span></p>
                 <div className="selected">
                     {seats.map((result)  => (
                         <div className="selectedlist">
@@ -82,16 +95,76 @@ function DrawSeat(value) {
             ))
             } 
                 </div>
+            </div></>)
+    }
+
+    var IMP = window.IMP; // 생략 가능
+    IMP.init("imp63545287"); // 예: imp00000000
+    
+    function requestPay() {
+        // IMP.request_pay(param, callback) 결제창 호출
+        IMP.request_pay({ // param
+            pg: "html5_inicis",
+            pay_method: "card",
+            merchant_uid: "ORD20180131-0000011",
+            name: "성인"+cnt+"명",
+            amount: 100,
+            buyer_email: "gildong@gmail.com",
+            buyer_name: getUser(),
+            buyer_tel: "010-4242-4242",
+            buyer_addr: "서울특별시 강남구 신사동",
+            buyer_postcode: "01181"
+        }, function (rsp) { // callback
+            if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+              // jQuery로 HTTP 요청
+              jQuery.ajax({
+                  url: "https://www.myservice.com/payments/complete", // 예: https://www.myservice.com/payments/complete
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  data: {
+                      imp_uid: rsp.imp_uid,
+                      merchant_uid: rsp.merchant_uid
+                  }
+                }).done(function(data) { // 응답 처리
+                    switch(data.status) {
+                      case "vbankIssued":
+                        break;
+                        // 가상계좌 발급 시 로직
+                      case "success":
+                        // 결제 성공 시 로직
+                        this.props.history.push("/Pay");
+                        break;
+                    }
+                  });
+            } else {
+              alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+            }
+          });
+    }
+    return (
+        <>
+        <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+        
+        <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+
+        </head>
+        <body>
+            {drawSeat()}
+                {drawSelect()}
+                <div>
+                    <nav>
+                        <div className ="st">
+                            <button className="prev"><NavLink to="/Reservation">이전</NavLink></button>
+                            <button onClick = {()=>requestPay()} className="next" id={btn}>
+                                결제
+                            </button>
+                        </div>
+                        
+                    </nav>
             </div>
-            <div>
-                <nav>
-                    <ul className ="st">
-                        <li className="prev"><NavLink to="/Reservation">이전</NavLink></li>
-                        <li className="next" id={btn}><NavLink to="/Pay">다음(결제)</NavLink></li>
-                    </ul>
-                    
-                </nav>
-            </div>
+        </body>
+            
         </>
     );
 }
