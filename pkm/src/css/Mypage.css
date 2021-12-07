@@ -29,7 +29,7 @@
 .cont {
   float:left;
 }
-img {
+.mypage-container img {
   vertical-align: middle;
   width:150px;
   height:200px;
@@ -48,7 +48,7 @@ img {
   line-height: 27px;
   width:100px;
   border-bottom: 1px solid black;
-  margin:70px auto 20px;
+  margin:150px auto 150px;
   font-size: 18px;
   vertical-align: middle;
 }

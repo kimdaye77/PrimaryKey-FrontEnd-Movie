@@ -17,6 +17,9 @@
 }
 .sch{
     position:relative;
+    width:100%;
+    border:none;
+    padding:20px 20px;
 }
 .rsvbtn{
     display: none;
@@ -36,7 +39,6 @@
     background-color: rgba(0, 0, 0, 0.1);
     font-size: 18px;
 }
-
 .sch:hover .rsvbtn{
     display: block;
 }
@@ -95,6 +97,8 @@
 .locallist li:first-child { border-top-left-radius:10px;}
 .locallist li:last-child {border-top-right-radius: 10px;}
 
+
+.theater_list button {border:1px solid rgba(0, 0, 0, 0.1); margin: 0 3px; border-radius: 7px; padding: 0 30px;}
 .theaterbox {
     width: 100%;
 }
@@ -107,8 +111,22 @@
     height:500px;
 }
 
+.info {
+    margin: 0 auto;
+    vertical-align: middle;
+    height:100%;
+}
 #cinemaone{font-size:25px;
     padding:10px auto;
 line-height: 30px;
 padding: 20px;
 text-align: left;}
+
+.Theater .schedule{
+    margin: 0 200px;
+}
+
+.bold{
+    line-height: 20px;
+    font-weight: bold;
+}

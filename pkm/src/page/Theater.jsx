@@ -19,6 +19,7 @@ class Theater extends Component {
       isLoading: true,
       theaterList: [],
       schedule:[],
+      theaterInfo:[],
     };
     
   }
@@ -33,7 +34,14 @@ class Theater extends Component {
       );
     const theaterList = res.data;
     console.log(res);
-    const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-11-10",{ 
+    const re= await axios.get("http://user.primarykey.shop:3000/theater/2", {
+      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+      // headers: {
+      //   Authorization: `Bearer ${token}`}}
+      );
+    const theaterInfo = re.data;
+    console.log(re);
+    const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-12-10",{ 
       headers: { Authorization: axios.defaults.headers.common['Authorization']}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}
@@ -100,10 +108,10 @@ class Theater extends Component {
                     ))
                       }
                         
-                    
-                      
+                
                   </div>  
-                  <div className="gangnam">
+                  {this.state.clickedTheater=="강남점"?(
+                    <div className="gangnam">
                     <p id="cinemaone">CINEMA1 강남점</p>
                     <img id="gangnamimg" src="https://img.cgv.co.kr/Theater/Theater/2014/1211/CGVgangnam.jpg" alt="" />
                       <p>서울특별시 강남구 역삼동 814-6 스타플렉스</p>
@@ -116,10 +124,13 @@ class Theater extends Component {
                                  <button className="sch">
                                 
                                 <div id="info">
+                                  <div className="bold">영화 정보</div>
                                   <div>영화 | {sch.title}</div>
                                   <div>러닝타임 | {sch.running_time}</div>
                                   <div>장르 | {sch.genre}</div>
                                   <div>개봉일 | {sch.open_date}</div>
+                                  <br/>
+                                  <div className="bold">예매 정보</div>
                                   <div>상영관 | {sch.hall_name}</div>
                                   <div>영화 타입 | {sch.type}</div>
                                   <div>시작시간 | {sch.start_time}</div>
@@ -139,14 +150,51 @@ class Theater extends Component {
                               </button> 
                       ))
                     }
-                                
-                              
-                      
-                           
-                          
-              
                       </div>
                   </div>      
+                  ):(
+                    <div className="gangnam">
+                    <p id="cinemaone">CINEMA1 명동점</p>
+                    <img id="gangnamimg" src="https://img.cgv.co.kr/Theater/Theater/2015/0506/LIB.JPG" alt="" />
+                      <p>서울특별시 중구 충무로2가 65-9 하이해리엇 10,11층</p>
+                      <p>서울특별시 중구 퇴계로 123 (명동)</p>
+                      <p>1544-1122</p>
+                      <p>5관 / 694석</p>
+                      <div className="schedule">
+                        <p className="theater_title">상영시간표</p>
+                     {schedule.map((sch)  => (
+                                 <button className="sch">
+                                
+                                <div id="info">
+                                  <div className="bold">영화 정보</div>
+                                  <div>영화 | {sch.title}</div>
+                                  <div>러닝타임 | {sch.running_time}</div>
+                                  <div>장르 | {sch.genre}</div>
+                                  <div>개봉일 | {sch.open_date}</div>
+                                  <br/>
+                                  <div className="bold">예매 정보</div>
+                                  <div>상영관 | {sch.hall_name}</div>
+                                  <div>영화 타입 | {sch.type}</div>
+                                  <div>시작시간 | {sch.start_time}</div>
+                                  <div>종료시간 | {sch.end_time}</div>
+                              </div>
+                              <NavLink to = "/Seat"><p className="rsvbtn">예매하기</p></NavLink>
+                              {sch.title=="이터널스"?
+                              (
+                               <div id="iternals">
+                                  <img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />
+                                </div>)
+                                :
+                                   (<div id="ddun">
+                                   <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
+                                </div>)
+                                }
+                              </button> 
+                      ))
+                    }
+                      </div>
+                  </div>      
+                  )}
                 </div>
                           
             </div>

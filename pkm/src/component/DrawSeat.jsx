@@ -106,12 +106,12 @@ function DrawSeat() {
         IMP.request_pay({ // param
             pg: "html5_inicis",
             pay_method: "card",
-            merchant_uid: "ORD20180131-0000011",
+            merchant_uid : 'merchant_' + new Date().getTime(),
             name: "성인"+cnt+"명",
             amount: 100,
-            buyer_email: "gildong@gmail.com",
+            buyer_email: "test1@test.com",
             buyer_name: getUser(),
-            buyer_tel: "010-4242-4242",
+            buyer_tel: "010-0000-0000",
             buyer_addr: "서울특별시 강남구 신사동",
             buyer_postcode: "01181"
         }, function (rsp) { // callback
@@ -125,18 +125,30 @@ function DrawSeat() {
                       imp_uid: rsp.imp_uid,
                       merchant_uid: rsp.merchant_uid
                   }
-                }).done(function(data) { // 응답 처리
+                }, document.location.href = '/Pay')
+                  .done(function(data) { // 응답 처리
+                    console.log(data);
                     switch(data.status) {
-                      case "vbankIssued":
-                        break;
+                      case("vbankIssued"):
+                      document.location.href = '/Pay'
                         // 가상계좌 발급 시 로직
-                      case "success":
-                        // 결제 성공 시 로직
-                        this.props.history.push("/Pay");
                         break;
+                      case("success"):
+                      document.location.href = '/Pay'
+                        // 결제 성공 시 로직
+                        break;
+                        
                     }
-                  });
-            } else {
+                  })
+                // HTTP 요청이 성공하거나 실패하는 것에 상관없이 언제나 always() 메소드가 실행됨.
+                
+                .always(function(data,status) {
+                
+                    document.location.href = '/Pay'
+                
+                });
+                  
+              } else {
               alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
             }
           });
@@ -145,7 +157,6 @@ function DrawSeat() {
         <>
         <head>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-        
         <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 
         </head>

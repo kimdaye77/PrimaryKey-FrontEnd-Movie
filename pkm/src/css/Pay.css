@@ -21,7 +21,29 @@
     line-height: 27px;
     width:100px;
     border-bottom: 1px solid black;
-    margin:70px auto 20px;
+    margin:70px auto 70px;
     font-size: 18px;
     vertical-align: middle;
+
 }
+
+.lft{padding-left:80px; text-align: left; height:100%; border-right: 1px solid black;}
+.lft::after{display: block; clear: both; content:'';}
+.lft .con{float: left; padding-right: 80px; }
+.lft img {float: right; width:200px; height:300px; padding-right: 70px;}
+.paybox{
+    padding: 50px 0;
+    height: 500px;
+    border: 2px solid black;
+}
+.paycont{display: flex;}
+
+#park{font-size: 25px; line-height: 50px;}
+
+#barcode img {width : 250px; height: 80px;}
+#barcode{width:250px; height: 80px; margin : 50px auto;}
+.msg {font-size: 20px;}
+.message{width:100%;}
+.txt3 {font-size: 18px; line-height: 30px;}
+
+.right{margin: 0 auto; text-align: center;}

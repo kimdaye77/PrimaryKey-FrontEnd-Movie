@@ -126,6 +126,8 @@ td:last-child{
     font-weight: bold;
 }
 
+.timesch{width:100%;}
+
 .movie-part {
     width: 284px;
 }
@@ -264,7 +266,7 @@ button:hover {
     vertical-align: middle;
     text-align: left;
     align-items: left;
-    margin: 10px auto;
+    margin: 10px 0;
 }
 
 .schedule button::after {
@@ -352,9 +354,10 @@ button:hover {
 
 #강남점:nth-child(2), 
 #이터널스:first-child,
-#ten:nth-child(4),
+#ten:nth-child(3),
 #first:first-child
 {
     background-color:lavender;
     border:2px solid purple;
 }
+.Reservation .schedule{width:100%; margin:10px 0;}

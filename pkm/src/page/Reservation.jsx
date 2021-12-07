@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, {Component} from 'react';
 import '../css/reset.css';
 import '../css/Reservation.css';
 import TheaterApi from '../component/TheaterApi';
@@ -243,7 +243,7 @@ class Reservation extends Component {
             {this.state.clickedMovie!=null?(
               <div id = {step} className="schedule" >
               {schedule.map((sch)  => (
-                <button id={clickedSchedule} onClick = {()=>(this.state.step="schedule", this.state.clickedSchedule="first", this.scheduleClickEvent(this.state.clickedSchedule))}>
+                <button className="timesch" id={clickedSchedule} onClick = {()=>(this.state.step="schedule", this.state.clickedSchedule="first", this.scheduleClickEvent(this.state.clickedSchedule))}>
                   
                   
                   {sch.title=="이터널스"?
