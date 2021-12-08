@@ -18,13 +18,13 @@ class Mypage extends Component {
     
       getInfo = async()=> {
         const res= await axios.get("http://user.primarykey.shop:3000/users/1", {
-          headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+          headers: { Authorization: sessionStorage.getItem('token')}}
           );
         console.log(res.data.userInfo);
         this.setState({userInfo:res.data.userInfo});
 
         const re= await axios.get("http://user.primarykey.shop:3000/users/1/reservations", {
-            headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+          headers: { Authorization: sessionStorage.getItem('token')}}
             );
           console.log(re.data.userReservationList);
           this.setState({userReservationList:re.data.userReservationList});

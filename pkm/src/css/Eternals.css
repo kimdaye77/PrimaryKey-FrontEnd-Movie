@@ -1,0 +1,67 @@
+.mv_search{width:100%; padding:0px 0px 70px; text-align: center; margin:0 auto;}
+.mv_search input {width:500px; padding:10px 20px; font-size: 20px; margin-right: 10px; line-height: 100%;}
+.mv_search button{font-size: 20px; padding:10px 20px; line-height: 100%; background-color: rgba(0,0,0,0.5); color: white; font-weight:lighter; border:none;}
+#poster_e img:last-child{width:300px;}
+#poster_e{position: relative;}
+#poster_e img:first-child{width:40px; position:absolute; left:120px;top:20px; z-index: 5;}
+.about_e p{font-size: 15px; padding:10px 0; width:400px; line-height: 20px; font-weight: lighter;}
+.about_e div{font-size: 20px;}
+.lft_e{float: left; padding-left: 100px;}
+.rht{float: right; padding-right:100px; text-align: justify; color:white; vertical-align: middle;}
+.about_e span{padding-right: 10px; font-size: 18px; font-weight: bold;}
+.float_box::after{display: block; content:''; clear:both;}
+.about_e, .cont_wrap{margin:0 auto; text-align: center; align-items: center;}
+.float_box{vertical-align: middle;width: 100%; border:1px white solid; border-radius: 7px; padding:50px 0; margin-top:100px; text-align: center; align-items: center;}
+.about_e{ color: white; padding: 100px 400px; background-color:rgba(0, 0, 0, 0.9);}
+.Eternals{
+    font-family: 'Roboto', sans-serif;
+    margin:0 auto;
+    align-items: center;
+    text-align:center;
+}
+.Eternals_cont{
+    max-width: 1280px;
+    align-items: center;
+    margin: 70px auto;
+    height:100%;
+    text-align:center;
+}
+
+.sch_wrap_box{
+    border-radius: 7px;
+    position:relative;
+    font-size: 15px;
+    width:350px;
+    height: 280px;
+    margin-right: 30px;
+    border:none;
+    padding:20px 20px;
+}
+
+.rsv_btn{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    display: none;
+    padding:8px 50px;
+    border-radius: 7px;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    border:1px solid white;
+    color:white;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+}
+.sch_wrap_box:hover .rsv_btn{
+    display: block;
+}
+
+.sch_info {
+    margin: 0 auto;
+    vertical-align: middle;
+    height:100%;
+}

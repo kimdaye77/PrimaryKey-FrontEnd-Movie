@@ -45,8 +45,9 @@
 
 .infor { background: #fff; padding: 15px; border: 1px solid #d9d9d9; margin-top:15px;}
 .infor h3 {color: #333; font-size: 30px; font-weight: 700; margin-bottom: 20px;} 
-.infor h3 p {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 25px;}
-
+.infor h3 p {height:100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 25px; vertical-align: middle;}
+.infor h3 p img{width:30px; display: inline-block; vertical-align: middle; padding-bottom:8px; margin-right: -8px;}
+.infor h3{height:50px;}
 .infor h3 .all {font-size:20px; line-height: 50px;}
 .infor h3 .a12 {font-size:20px; line-height: 50px;}
 .infor h3 .a15 {font-size:20px; line-height: 50px;}

@@ -15,7 +15,7 @@ class Seat extends Component {
       }
     getInfo =async() => {
         const res =await axios.get("http://user.primarykey.shop:3000/seats/2", {
-            headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+          headers: { Authorization: sessionStorage.getItem('token')}}
           );
           console.log(res.data.restSeats);
           this.setState({restSeats:res.data.restSeats});

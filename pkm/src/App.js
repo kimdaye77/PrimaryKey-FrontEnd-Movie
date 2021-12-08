@@ -9,9 +9,7 @@ import Store from './page/Store.jsx';
 import Benefit from './page/Benefit.jsx';
 import Pay from './page/Pay.jsx';
 import Mypage from './page/Mypage.jsx';
-import Cast from './page/Cast.jsx';
 import Eternals from './page/Eternals.jsx';
-import Genre from './page/Genre.jsx';
 import './App.css';
 import React, {useEffect, useState} from "react";
 import axios from "axios";
@@ -49,7 +47,7 @@ function App() {
           <PublicRoute exact={true} path={"/Login"} component={Login} />
           <PrivateRoute exact={true} path={"/Mypage"} component={Mypage} />
           <PrivateRoute exact={true} path={"/Pay"} component={Pay} />
-          <PrivateRoute exact={true} path={"/Cast"} component={Cast} />
+          <PrivateRoute exact={true} path={"/Eternals"} component={Eternals} />
           <PrivateRoute exact={true} path={"/Movie"} component={Movie} />
           <PrivateRoute exact={true} path={"/Reservation"} component={Reservation} />
           <PrivateRoute exact={true} path={"/Theater"} component={Theater} />

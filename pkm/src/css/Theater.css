@@ -27,7 +27,7 @@
     left: 50%;
     top:50%;
     transform:translate(-50%,-50%);
-    /* display: none; */
+    display: none;
     padding:8px 50px;
     border-radius: 7px;
     text-align: center;

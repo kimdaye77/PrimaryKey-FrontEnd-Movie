@@ -133,7 +133,7 @@ class Theater extends Component {
                                   <div>장르 | {sch.genre}</div>
                                   <div>개봉일 | {sch.open_date}</div>
                                   <br/>
-                                  <div className="bold">예매 정보</div>
+                                  <div className="bold">상영 정보</div>
                                   <div>상영관 | {sch.hall_name}</div>
                                   <div>영화 타입 | {sch.type}</div>
                                   <div>시작시간 | {sch.start_time}</div>
