@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+.Movie {
+    font-family: 'Roboto', sans-serif;
+    height:100%;
+    text-align: center;
+    background-color: white;
+    color:black;
+}
+
+#mv{
+    max-width: 1280px;
+    height:2000px;
+    align-items: center;
+    margin: 70px auto;
+    text-align:center;
+}
+
+.movie_title{
+    line-height: 27px;
+    width:100px;
+    border-bottom: 1px solid black;
+    margin:70px auto;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.mv_title {margin-bottom: 60px;}
+.mv_title ul {overflow: hidden; width: 848px; margin: 0 auto;}
+.mv_title li {float: left; width: 210px; text-align: center; border: 1px solid #c4c4c4; margin-right: -1px;}
+.mv_title li a {display: block; padding: 15px 0; font-size: 18px; color: #666; font-weight: 700;}
+.mv_title li.active a {background: #666; color: #fff;}
+.mv_chart {height: 592px;}
+.posterwrap{overflow: hidden;}
+.posterwrap {float: left; width: 292px; height: 592px; margin-right: 18px;}
+.posterwrap:last-child {margin-right: 0;}
+.poster {position: relative;}
+.poster img {display: block;}
+.rank {position: absolute; top: 17px; left: 0; width: 50px; height: 50px; line-height: 50px; background-color: #38116a; text-align: center;}
+.poster .rank strong {color: #fff;}
+
+.infor { background: #fff; padding: 15px; border: 1px solid #d9d9d9;}
+.infor h3 {color: #333; font-size: 30px; font-weight: 700; margin-bottom: 20px;}
+
+.infor h3 .all {font-size:20px; line-height: 50px;}
+.infor h3 .a12 {font-size:20px; line-height: 50px;}
+.infor h3 .a15 {font-size:20px; line-height: 50px;}
+.infor h3 .a19 {font-size:20px; line-height: 50px;}
+.infor .infor_btn a {display: inline-block; background: #f2f2f2; font-size: 18px; padding: 15px 30px;}

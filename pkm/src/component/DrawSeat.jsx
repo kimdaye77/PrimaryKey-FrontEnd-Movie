@@ -61,12 +61,20 @@ function DrawSeat() {
         //C9 C10 C11 C12 D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12 E1 E2 E3 E4
         const a = ["A7", "A8", "A9", "A10", "A11", "A12", "B1", "B2", "B3", "B4", "B5", "C9", "C10", "C11", "C12", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "D12", "E1", "E2", "E3", "E4"]
         
-        if(seats.includes(seat)) {onRemove(seat); count(cnt => cnt-1); total(price=>price-13000)}
-        else{selectedSeats(seats => [...seats, seat]); count(cnt=>cnt+1); total(price=>price+13000)}
+        if(seats.includes(seat)) {
+            onRemove(seat);
+            count(cnt => cnt-1);
+            total(price=>price-100);
+            
+        }
+        else {selectedSeats(seats => [...seats, seat]); count(cnt=>cnt+1); total(price=>price+100); setbtn("true");}
+        
+        if(cnt==0) setbtn("false");
         console.log(seats);
+        console.log(cnt);
         console.log("clicked");
 
-        setbtn("true");
+        
     }
 
     const onRemove = (id) => {
@@ -108,7 +116,7 @@ function DrawSeat() {
             pay_method: "card",
             merchant_uid : 'merchant_' + new Date().getTime(),
             name: "성인"+cnt+"명",
-            amount: 100,
+            amount: price,
             buyer_email: "test1@test.com",
             buyer_name: getUser(),
             buyer_tel: "010-0000-0000",

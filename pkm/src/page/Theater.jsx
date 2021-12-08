@@ -3,6 +3,7 @@ import TheaterApi from '../component/TheaterApi';
 import axios from "axios";
 import '../css/reset.css';
 import '../css/Theater.css';
+
 import FooterBlack from '../component/FooterBlack.jsx';
 import HeaderBlackVersion from '../component/HeaderBlackVersion.jsx';
 import PropTypes from "prop-types";
@@ -139,12 +140,12 @@ class Theater extends Component {
                               <NavLink to = "/Seat"><p className="rsvbtn">예매하기</p></NavLink>
                               {sch.title=="이터널스"?
                               (
-                               <div id="iternals">
-                                  <img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />
+                               <div id="eternals">
+                                  <img src="https://w.namu.la/s/18aa2898e80a4c2d30d47ff82117fe009daf6c0e93d768f3eb80d204edbb734d0488f9c2fd0af2f4ed6fcc39883bc719ee07cbce83618dbe95997f700e2821555daa5b2a81763d85018fb32af84bf8c98e194e76244806fb532461e78e8f02bb8317a2d7b68049d46c9887e3f18bc373" alt="" />
                                 </div>)
                                 :
                                    (<div id="ddun">
-                                   <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14af1be1dc44516e39d671620ff17c77872c4e7c1b914fcffe79ab1d17baed7fb310" alt="" />
+                                   <img src="https://w.namu.la/s/40e60eb71778c1cd841d54b29fc99b062b510eb66a0e2c7a2451ff3b75cf7cc1894acfe03a26a7b38e2decde95c9f5e1a51fc4ad4dff14e07da0124b571c10f877f6d037f076b3e93fd7120e497c14afbdf8eaf8473b3c1e9cd2d87fe9dbe9f022f6df188300779a54b4a8d626376d02" alt="" />
                                 </div>)
                                 }
                               </button> 
@@ -172,7 +173,7 @@ class Theater extends Component {
                                   <div>장르 | {sch.genre}</div>
                                   <div>개봉일 | {sch.open_date}</div>
                                   <br/>
-                                  <div className="bold">예매 정보</div>
+                                  <div className="bold">상영 정보</div>
                                   <div>상영관 | {sch.hall_name}</div>
                                   <div>영화 타입 | {sch.type}</div>
                                   <div>시작시간 | {sch.start_time}</div>
@@ -181,7 +182,7 @@ class Theater extends Component {
                               <NavLink to = "/Seat"><p className="rsvbtn">예매하기</p></NavLink>
                               {sch.title=="이터널스"?
                               (
-                               <div id="iternals">
+                               <div id="eternals">
                                   <img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />
                                 </div>)
                                 :

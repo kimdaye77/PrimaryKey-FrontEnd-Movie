@@ -20,24 +20,24 @@ import PublicRoute from './utils/PublicRoute.js';
 import { getToken, removeUserSession, setUserSession } from './utils/Common.js';
 
 function App() {
-  // const [authLoading, setAuthLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(true);
  
-  // useEffect(() => {
-  //   const token = getToken();
-  //   if (!token) {
-  //     return;
-  //   }
-  //   axios.post(`http://localhost:3000//verifyToken?token=${token}`).then(response => {
-  //     setUserSession(response.data.token, response.data.user);
-  //     setAuthLoading(false);
-  //   }).catch(error => {
-  //     setAuthLoading(false);
-  //   });
-  // }, []);
+  useEffect(() => {
+    const token = getToken();
+    if (!token) {
+      return;
+    }
+    axios.post(`http://localhost:3000//verifyToken?token=${token}`).then(response => {
+      setUserSession(response.data.token, response.data.user);
+      setAuthLoading(false);
+    }).catch(error => {
+      setAuthLoading(false);
+    });
+  }, []);
  
-  // if (authLoading && getToken()) {
-  //   return <div className="content">Checking Authentication...</div>
-  // }
+  if (authLoading && getToken()) {
+    return <div className="content">Checking Authentication...</div>
+  }
     return (
       <div className = "App">
         

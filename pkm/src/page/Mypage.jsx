@@ -91,7 +91,7 @@ class Mypage extends Component {
                             <div><span className="txt2">주차권</span> {m.parking_barcode}</div>
                         </div>
                         
-                        <div id="img">{m.title=="이터널스"?(<img src="https://w.namu.la/s/4faa09f80d3b1c37c4d4bd264c38760b59249fed5d35ef4995cc9f51ede7492ba37db64bee6706934f4dc22a946473dac3ad85f13f592d29b9ae46c9736bc6c1b1f8b7ecdeef9e74cfd55665a54e37ca75394433d91b43ada3df964508b35a189a8d29344500716ddc2de402888c11a4" alt="" />):
+                        <div id="img">{m.title=="이터널스"?(<img src="https://w.namu.la/s/18aa2898e80a4c2d30d47ff82117fe009daf6c0e93d768f3eb80d204edbb734d0488f9c2fd0af2f4ed6fcc39883bc719ee07cbce83618dbe95997f700e2821555daa5b2a81763d85018fb32af84bf8c98e194e76244806fb532461e78e8f02bb8317a2d7b68049d46c9887e3f18bc373" alt="" />):
                     (<img src="https://w.namu.la/s/90c275e4291b76dc8d5c687029a4089097c293900a13e22d8d409aa79b29fd8bdd97885b56f87a7b889e4466e3dfe23182de582f04df86698b413c899fdcda1f9885aa726b857f4ae3f2e221f2a5cdd36ff1eb95241456b35c1d584dae5ad1f351493dbfd00461dc0e34a8e812aefd13" alt="" />)}</div>
                     </div>       
                     </>  

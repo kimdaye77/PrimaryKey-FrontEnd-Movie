@@ -277,11 +277,11 @@ button:hover {
 
 #info {float:left; padding-left: 10px;}
 
-#iternals, #ddun {
+#eternals, #ddun {
     float: right;
 }
 
-#iternals img, #ddun img {
+#eternals img, #ddun img {
     vertical-align: middle;
     width:150px;
     height:200px;
