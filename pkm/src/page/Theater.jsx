@@ -27,23 +27,25 @@ class Theater extends Component {
 
   getTheaters = async()=> {
     const token = getToken();
+    console.log(token);
+    console.log(sessionStorage.getItem('token'));
 
     const res= await axios.get("http://user.primarykey.shop:3000/theater?theaterAddress=서울", {
-      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+      headers: { Authorization: sessionStorage.getItem('token')}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}
       );
     const theaterList = res.data;
     console.log(res);
     const re= await axios.get("http://user.primarykey.shop:3000/theater/2", {
-      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+      headers: { Authorization: sessionStorage.getItem('token')}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}
       );
     const theaterInfo = re.data;
     console.log(re);
     const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-12-10",{ 
-      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+      headers: { Authorization: sessionStorage.getItem('token')}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}
       );

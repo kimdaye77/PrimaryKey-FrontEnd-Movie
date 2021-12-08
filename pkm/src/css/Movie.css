@@ -24,6 +24,9 @@
     font-size: 18px;
     vertical-align: middle;
 }
+.mv_search{width:100%; padding:0px 0px 70px; text-align: center; margin:0 auto;}
+.mv_search input {width:500px; padding:10px 20px; font-size: 20px; margin-right: 10px; line-height: 100%;}
+.mv_search button{font-size: 20px; padding:10px 20px; line-height: 100%; background-color: rgba(0,0,0,0.5); color: white; font-weight:lighter; border:none;}
 
 .mv_title {margin-bottom: 60px;}
 .mv_title ul {overflow: hidden; width: 848px; margin: 0 auto;}
@@ -32,18 +35,28 @@
 .mv_title li.active a {background: #666; color: #fff;}
 .mv_chart {height: 592px;}
 .posterwrap{overflow: hidden;}
-.posterwrap {float: left; width: 292px; height: 592px; margin-right: 18px;}
+.posterwrap {float: left; width:300px; height: 100%; margin-right: 18px; }
 .posterwrap:last-child {margin-right: 0;}
+.posterwrap::after{display: block; content:''; clear:both;}
 .poster {position: relative;}
 .poster img {display: block;}
 .rank {position: absolute; top: 17px; left: 0; width: 50px; height: 50px; line-height: 50px; background-color: #38116a; text-align: center;}
 .poster .rank strong {color: #fff;}
 
-.infor { background: #fff; padding: 15px; border: 1px solid #d9d9d9;}
-.infor h3 {color: #333; font-size: 30px; font-weight: 700; margin-bottom: 20px;}
+.infor { background: #fff; padding: 15px; border: 1px solid #d9d9d9; margin-top:15px;}
+.infor h3 {color: #333; font-size: 30px; font-weight: 700; margin-bottom: 20px;} 
+.infor h3 p {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 25px;}
 
 .infor h3 .all {font-size:20px; line-height: 50px;}
 .infor h3 .a12 {font-size:20px; line-height: 50px;}
 .infor h3 .a15 {font-size:20px; line-height: 50px;}
 .infor h3 .a19 {font-size:20px; line-height: 50px;}
-.infor .infor_btn a {display: inline-block; background: #f2f2f2; font-size: 18px; padding: 15px 30px;}
+.infor .infor_btn{display: flex;}
+.infor .infor_btn button {background: #f2f2f2; font-size: 18px; width:100%; padding:10px 0;}
+.infor .infor_btn button:last-child {border-left: none;}
+
+
+.infor .infor_btn button:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+}

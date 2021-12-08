@@ -34,14 +34,14 @@ class Reservation extends Component {
     const token = getToken();
 
     const res= await axios.get("http://user.primarykey.shop:3000/theater?theaterAddress=서울", {
-      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+      headers: { Authorization: sessionStorage.getItem('token')}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}
       );
     const theaterList = res.data;
     console.log(res);
     const r = await axios.get("http://user.primarykey.shop:3000/movieSchedule?theaterID=1&date=2021-12-10",{ 
-      headers: { Authorization: axios.defaults.headers.common['Authorization']}}
+      headers: { Authorization: sessionStorage.getItem('token')}}
       // headers: {
       //   Authorization: `Bearer ${token}`}}
       );
