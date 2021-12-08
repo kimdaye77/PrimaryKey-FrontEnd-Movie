@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import logo from '../asset/logo.png';
-import person from '../asset/person.png';
+import logo from '../asset/logo_white.png';
 import language from '../asset/language.png';
 import search from '../asset/search.png';
 import menu from '../asset/menu.png';
@@ -32,34 +31,32 @@ function HeaderWhiteVersion(props) {
             <li><img src={language} className="language" alt="language" /></li>
           </ul>
         </nav>):(
-          <div>
-            <span>{getUser()}님 환영합니다.</span>
-            <br /><br />
-            <span className="mypage"><NavLink to = "/Mypage">마이페이지</NavLink></span>
-          <input type="button" onClick={handleLogout} value="Logout" />
-        </div>
+          <div className="flex-box">
+          <span className="mypage"><NavLink to = "/Mypage">마이페이지</NavLink></span>
+          <p className="bar">|</p>
+        <a className="logout" onClick={handleLogout}>로그아웃</a>
+      </div>
         )}
       </div>
       <div className="Navigation">
-        <nav>
-          <img src={menu} className="menu" alt="menu"/>
-          <ul>
-          <>
-            <li><NavLink to = "/Movie">영화</NavLink></li>
-            <li><NavLink to = "/Reservation">예매</NavLink></li>
-            <li><NavLink to = "/Theater">극장</NavLink></li>
-            <li><NavLink exact to = "/"><img src={logo} className="logo" alt="logo"/></NavLink></li>
-            <li><NavLink to = "/Event">이벤트</NavLink></li>
-            <li><NavLink to = "/Store">스토어</NavLink></li>
-            <li><NavLink to = "/Benefit">혜택</NavLink></li>
-          </>
-          </ul>
-          <div className="icon">
-            <img src={search} className="search" alt="search"/>
-            <img src={person} className="person" alt="person"/>
-          </div>
-        </nav>
-      </div>
+      <nav className="top-bar">
+        <img src={menu} className="menu" alt="menu"/>
+        <ul>
+        <>
+          <li><NavLink to = "/Movie">영화</NavLink></li>
+          <li><NavLink to = "/Reservation">예매</NavLink></li>
+          <li><NavLink to = "/Theater">극장</NavLink></li>
+          <li><NavLink exact to = "/"><img src={logo} className="logo" alt="logo"/></NavLink></li>
+          <li><NavLink to = "/Event">이벤트</NavLink></li>
+          <li><NavLink to = "/Store">스토어</NavLink></li>
+          <li><NavLink to = "/Benefit">혜택</NavLink></li>
+        </>
+        </ul>
+        <div className="icon">
+          <img src={search} className="search" alt="search"/>
+        </div>
+      </nav>
+    </div>
       </div>
       
       

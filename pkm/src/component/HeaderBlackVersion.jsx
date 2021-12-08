@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import blacklogo from '../asset/logo_b.png';
-import person from '../asset/person_b.png';
+import blacklogo from '../asset/blacklogo.png';
 import language from '../asset/language_b.png';
 import search from '../asset/search_b.png';
 import menu from '../asset/menu_b.png';
@@ -34,17 +33,16 @@ function HeaderBlackVersion(props) {
             <li><img src={language} className="language" alt="language" /></li>
           </ul>
         </nav>):(
-          <div>
-            <span>{getUser()}님 환영합니다.</span>
-            <br /><br />
+          <div className="flex-box">
             <span className="mypage"><NavLink to = "/Mypage">마이페이지</NavLink></span>
-          <input type="button" onClick={handleLogout} value="Logout" />
+            <p className="bar">|</p>
+          <a className="logout" onClick={handleLogout}>로그아웃</a>
         </div>
         )}
         </div>
     </div>
     <div className="Navigation">
-      <nav>
+      <nav className="top-bar">
         <img src={menu} className="menu" alt="menu"/>
         <ul>
         <>
@@ -59,7 +57,6 @@ function HeaderBlackVersion(props) {
         </ul>
         <div className="icon">
           <img src={search} className="search" alt="search"/>
-          <img src={person} className="person" alt="person"/>
         </div>
       </nav>
     </div>

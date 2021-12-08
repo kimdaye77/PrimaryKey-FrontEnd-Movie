@@ -16,16 +16,7 @@
 }
 
 
-.menu {
-    padding: 0 30px 0 70px;
-}
-
-.person{
-    padding-right: 30px;
-}
-
-
-.menu, .search, .person{
+.menu, .search{
     margin-top:20px;
     width:25px;
     height:25px;
@@ -51,8 +42,12 @@
     margin-left: 8px;
 }
 
-.icon img:first-child{
+.icon img{
     padding-right: 1vw;
+}
+
+.menu {
+    padding-left: 1vw;
 }
 
 .Navigation nav{
@@ -78,21 +73,6 @@
     z-index: 5;
 }
 
-.Navigation li:nth-child(3) {
-    z-index: 10;
-    padding-right:-5px;
-}
-
-.Navigation li:nth-child(4) {
-    z-index: -50;
-    padding-left:5px;
-}
-
-
-.Navigation li:nth-child(5) {
-    padding-left:0;
-}
-
 
 li img {
     z-index: -50;
@@ -102,8 +82,23 @@ li img {
     width:inherit;
     height:inherit;
     display: inline-block;
-    padding: 0;
+    padding: 10px 40px;
     margin: 0 auto;
     z-index: -5;
 }
 
+.bar {
+    padding: 10px;
+}
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

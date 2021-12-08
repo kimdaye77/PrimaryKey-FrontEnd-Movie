@@ -40,7 +40,7 @@ function Login(props) {
         const user = login_id.value;
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         setUserSession(axios.defaults.headers.common['Authorization'], login_id.value);
-        alert("로그인 성공");
+        alert("김나현님 환영합니다.");
         props.history.push("/");      
       }   
       else {
