@@ -204,6 +204,7 @@ class Movie extends Component {
                             </div>
                         </div>
                     </div>
+                    <button id="more">더보기</button>
                 </div>
             </div>
         </div>
