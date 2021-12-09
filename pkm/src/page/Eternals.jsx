@@ -73,7 +73,7 @@ class Eternals extends Component {
                 {movieInfo.map((mv)  => (
                         <div className="about_e">
                             <div className="float_box">
-                                <div className="lft_e" id="poster_e"><img src={twelve} alt="" /><img src={mv.poster_image} alt="" /></div>
+                                <div className="lft_e" id="poster_e"><img src={twelve} alt="" /><img src="https://img.megabox.co.kr/SharedImg/2021/10/27/FhsmDr5hfwwoaHQ16TVMygsYjh7dDRhD_420.jpg" alt="" /></div>
                                 <div className="rht">
                                     <h1>이터널스</h1>
                                     <h2>Eternals</h2>

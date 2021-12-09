@@ -69,7 +69,7 @@ function DrawSeat() {
         }
         else {selectedSeats(seats => [...seats, seat]); count(cnt=>cnt+1); total(price=>price+100); setbtn("true");}
         
-        if(cnt==0) setbtn("false");
+        // if(cnt==0) setbtn("false");
         console.log(seats);
         console.log(cnt);
         console.log("clicked");

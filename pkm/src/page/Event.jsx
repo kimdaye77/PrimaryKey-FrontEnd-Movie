@@ -70,7 +70,7 @@ class Event extends Component {
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-
+        <div className="event_box">
         <h2 id="evn_list">이벤트 목록</h2>
                     <div className="event_wrap">
                     
@@ -107,6 +107,9 @@ class Event extends Component {
                             
                         </div>
                     </div>
+        </div>
+
+      
                     
                 </div>
             </div>

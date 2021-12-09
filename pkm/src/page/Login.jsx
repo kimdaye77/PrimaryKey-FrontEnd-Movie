@@ -41,7 +41,7 @@ function Login(props) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         setUserSession(axios.defaults.headers.common['Authorization'], login_id.value);
         alert("김나현님 환영합니다.");
-        props.history.push("/");      
+        document.location.href="/";      
       }   
       else {
         alert("아이디/비밀번호가 틀렸습니다.");
