@@ -11,8 +11,6 @@ import {NavLink} from "react-router-dom";
 class Eternals extends Component {
     constructor() {
         super();
-    
-
         this.state = {
           movieInfo :[],
           searchword:"",
@@ -74,23 +72,33 @@ class Eternals extends Component {
             <div className="cont_wrap">
                 {movieInfo.map((mv)  => (
                         <div className="about_e">
-                            <div>{mv.title}</div>
                             <div className="float_box">
                                 <div className="lft_e" id="poster_e"><img src={twelve} alt="" /><img src={mv.poster_image} alt="" /></div>
                                 <div className="rht">
+                                    <h1>이터널스</h1>
+                                    <h2>Eternals</h2>
                                     <p><span>러닝타임</span>{mv.running_time}분</p>
                                     <p><span>개봉일</span>{mv.open_date}</p>
                                     <p><span>장르</span>{mv.genre}</p>
                                     <p><span>출연진[감독/배우들]</span>
                                     <br/>
                                     <br/>{mv.cast}</p>
-                                    <p><span>개봉국가</span>{mv.country_name}</p></div>                               
+                                    <p><span>개봉국가</span>{mv.country_name}</p>
+                                    <p>
+                                    <span id="btn_e"><a href=""> ♡ 1.5k</a></span>  
+                                    <span><NavLink to ="/Reservation" id="btn_e">예매하기</NavLink>   </span>
+                                    </p>
+                                    </div>   
+                                     
+                                                           
                             </div>
+                            
                         </div>
+                        
                         ))
                 }
             </div>
-            <div>
+            {/* <div>
                             <p className="theater_title">상영시간표</p>
                         {schedule.map((sch)  => (
                             <>{sch.title=="이터널스"?(<>
@@ -108,14 +116,14 @@ class Eternals extends Component {
                                             <div>시작시간 | {sch.start_time}</div>
                                             <div>종료시간 | {sch.end_time}</div>
                                         </div>
-                              <NavLink to = "/Seat"><p className="rsv_btn">예매하기</p></NavLink>
+                              <NavLink to = "/Seat"><p className="/Reservation">예매하기</p></NavLink>
                               </button> 
                               </>):(<></>)}
                             </>
                                     
                       ))
                     }
-                      </div>
+                      </div> */}
             
         
         <FooterBlack />
