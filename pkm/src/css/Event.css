@@ -78,8 +78,8 @@
 
 .Event .swiper-container{width: 100%; height: 700px;}
 /* 슬라이드 */
-.Event .slider {padding:0 100px; height:100%;}
-.Event .slider .ss1 {background: url(https://img.cgv.co.kr/WebApp/contents/eventV4/33358/16354771876350.jpg) no-repeat center center; background-size:cover;}
+.Event .slider {padding:0 200px; height:100%;}
+.Event .slider .ss1 {background: url(https://img.cgv.co.kr/WebApp/contents/eventV4/33358/16354771876350.jpg) no-repeat center center; background-size:80%;}
 .Event .slider .ss2 {background: url(https://img.cgv.co.kr/WebApp/contents/eventV4/33485/16370622310250.jpg) no-repeat center center; background-size:cover;}
 .Event .slider .ss3 {background: url(https://img.cgv.co.kr/WebApp/contents/eventV4/33635/16389321233880.jpg) no-repeat center center; background-size:cover;}
 
